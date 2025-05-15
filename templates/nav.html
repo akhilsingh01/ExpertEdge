@@ -3,22 +3,22 @@
             <div class="flex justify-between h-16">
                 <div class="flex">
                     <div class="flex-shrink-0 flex items-center">
-                        <a href="/templates/home.html" class="text-2xl font-bold">Expert<span class="text-secondary">Edge</span></a>
+                        <a href="{{ url_for('home') }}" class="text-2xl font-bold">Expert<span class="text-secondary">Edge</span></a>
                     </div>
                     <div class="hidden sm:ml-10 sm:flex sm:space-x-8">
-                        <a href="/templates/home.html"
+                        <a href="{{ url_for('home') }}"
                             class="border-primary text-primary inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
                             Home
                         </a>
-                        <a href="/templates/courses.html"
+                        <a href="{{ url_for('courses') }}"
                             class="text-gray-500 dark:text-gray-300 hover:border-black dark:hover:border-gray-300 hover:border-b-2 hover:text-gray-700 dark:hover:text-white inline-flex items-center px-1 pt-1 text-sm font-medium">
                             Courses
                         </a>
-                        <a href="/templates/about.html"
+                        <a href="{{ url_for('about') }}"
                             class="text-gray-500 dark:text-gray-300 hover:border-black dark:hover:border-gray-300 hover:border-b-2 hover:text-gray-700 dark:hover:text-white inline-flex items-center px-1 pt-1 text-sm font-medium">
                             About
                         </a>
-                        <a href="/templates/contact-us.html"
+                        <a href="{{ url_for('contact-us') }}"
                             class="text-gray-500 dark:text-gray-300 hover:border-black dark:hover:border-gray-300 hover:border-b-2 hover:text-gray-700 dark:hover:text-white inline-flex items-center px-1 pt-1 text-sm font-medium">
                             Contact Us
                         </a>
@@ -44,7 +44,7 @@
                         </label>
                     </div>
                     <div class="shrink-0">
-                        <a href="/templates/sign-in.html" class="btn-primary">
+                        <a href="{{ url_for('sign-in') }}" class="btn-primary">
                             <iconify-icon icon="heroicons:user" width="20"></iconify-icon>
                             <span class="ml-1">Sign In</span>
                         </a>
@@ -70,18 +70,18 @@
         <!-- Mobile menu, toggle classes based on menu state -->
         <div class="mobile-menu hidden sm:hidden">
             <div class="pt-2 pb-3 space-y-1">
-                <a href="/templates/home.html"
+                <a href="{{ url_for('home') }}"
                     class="bg-primary/10 dark:bg-primary/20 text-primary block pl-3 pr-4 py-2 border-l-4 border-primary font-medium">Home</a>
-                <a href="/templates/courses.html"
+                <a href="{{ url_for('courses') }}"
                     class="text-gray-500 dark:text-gray-300 block pl-3 pr-4 py-2 ml-1 font-medium">Courses</a>
-                <a href="/templates/about.html"
+                <a href="{{ url_for('about') }}"
                     class="text-gray-500 dark:text-gray-300 block pl-3 pr-4 py-2 ml-1 font-medium">About</a>
-                <a href="/templates/contact-us.html"
+                <a href="{{ url_for('contact-us') }}"
                     class="text-gray-500 dark:text-gray-300 block pl-3 pr-4 py-2 ml-1 font-medium">Contact Us</a>
             </div>
             <div class="pt-4 pb-3 border-t border-gray-200 dark:border-gray-700">
                 <div class="flex items-center px-4">
-                    <a href="/templates/sign-in.html" class="w-full btn-primary">
+                    <a href="{{ url_for('sign-in') }}" class="w-full btn-primary">
                         <iconify-icon icon="heroicons:user" width="20"></iconify-icon>
                         <span class="ml-1">Sign In</span>
                     </a>
