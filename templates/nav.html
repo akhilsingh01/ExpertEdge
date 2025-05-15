@@ -1,91 +1,119 @@
+{% set current = request.endpoint %}
 <nav class="bg-white dark:bg-gray-800 shadow-sm sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16">
-                <div class="flex">
-                    <div class="flex-shrink-0 flex items-center">
-                        <a href="{{ url_for('home') }}" class="text-2xl font-bold">Expert<span class="text-secondary">Edge</span></a>
-                    </div>
-                    <div class="hidden sm:ml-10 sm:flex sm:space-x-8">
-                        <a href="{{ url_for('home') }}"
-                            class="border-primary text-primary inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
-                            Home
-                        </a>
-                        <a href="{{ url_for('courses') }}"
-                            class="text-gray-500 dark:text-gray-300 hover:border-black dark:hover:border-gray-300 hover:border-b-2 hover:text-gray-700 dark:hover:text-white inline-flex items-center px-1 pt-1 text-sm font-medium">
-                            Courses
-                        </a>
-                        <a href="{{ url_for('about') }}"
-                            class="text-gray-500 dark:text-gray-300 hover:border-black dark:hover:border-gray-300 hover:border-b-2 hover:text-gray-700 dark:hover:text-white inline-flex items-center px-1 pt-1 text-sm font-medium">
-                            About
-                        </a>
-                        <a href="{{ url_for('contact_us') }}"
-                            class="text-gray-500 dark:text-gray-300 hover:border-black dark:hover:border-gray-300 hover:border-b-2 hover:text-gray-700 dark:hover:text-white inline-flex items-center px-1 pt-1 text-sm font-medium">
-                            Contact Us
-                        </a>
-                    </div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-16">
+            <div class="flex">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="{{ url_for('home') }}" class="text-2xl font-bold">Expert<span
+                            class="text-secondary">Edge</span></a>
                 </div>
-                <div class="hidden sm:ml-6 sm:flex sm:items-center">
-                    <div class="relative">
-                        <input type="text" placeholder="Search courses..."
-                            class="bg-gray-100 dark:bg-gray-700 rounded-full py-2 px-4 focus:outline-none dark:text-white w-auto text-black">
-                        <button type="submit" class="absolute right-3 top-2.5 text-gray-500 dark:text-gray-400">
-                            <iconify-icon icon="heroicons:magnifying-glass" width="20"></iconify-icon>
-                        </button>
-                    </div>
-                    <div class="mx-3 flex items-center">
-                        <!-- Dark mode toggle -->
-                        <label for="dark-mode-toggle-desktop"
-                            class="flex items-center justify-center cursor-pointer mx-3 p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700">
-                            <input type="checkbox" id="dark-mode-toggle-desktop" class="dark-mode-toggle sr-only">
-                            <iconify-icon icon="heroicons:moon" class="text-black dark:hidden"
-                                width="25"></iconify-icon>
-                            <iconify-icon icon="heroicons:sun" class="dark:text-white dark:inline-block hidden"
-                                width="25"></iconify-icon>
-                        </label>
-                    </div>
-                    <div class="shrink-0">
-                        <a href="{{ url_for('sign_in') }}" class="btn-primary">
-                            <iconify-icon icon="heroicons:user" width="20"></iconify-icon>
-                            <span class="ml-1">Sign In</span>
-                        </a>
-                    </div>
+                <div class="hidden sm:ml-10 sm:flex sm:space-x-8">
+                    <a href="{{ url_for('home') }}" class="{% if current == 'home' %}
+                        border-primary text-primary inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium
+                    {% else %}
+                        text-gray-500 dark:text-gray-300 hover:border-black dark:hover:border-gray-300 hover:border-b-2 hover:text-gray-700 dark:hover:text-white inline-flex items-center px-1 pt-1 text-sm font-medium
+                    {% endif %}">
+                        Home
+                    </a>
+                    <a href="{{ url_for('courses') }}" class="{% if current == 'courses' %}
+                        border-primary text-primary inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium
+                    {% else %}
+                        text-gray-500 dark:text-gray-300 hover:border-black dark:hover:border-gray-300 hover:border-b-2 hover:text-gray-700 dark:hover:text-white inline-flex items-center px-1 pt-1 text-sm font-medium
+                    {% endif %}">
+                        Courses
+                    </a>
+                    <a href="{{ url_for('about') }}" class="{% if current == 'about' %}
+                        border-primary text-primary inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium
+                    {% else %}
+                        text-gray-500 dark:text-gray-300 hover:border-black dark:hover:border-gray-300 hover:border-b-2 hover:text-gray-700 dark:hover:text-white inline-flex items-center px-1 pt-1 text-sm font-medium
+                    {% endif %}">
+                        About
+                    </a>
+                    <a href="{{ url_for('contact_us') }}" class="{% if current == 'contact_us' %}
+                        border-primary text-primary inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium
+                    {% else %}
+                        text-gray-500 dark:text-gray-300 hover:border-black dark:hover:border-gray-300 hover:border-b-2 hover:text-gray-700 dark:hover:text-white inline-flex items-center px-1 pt-1 text-sm font-medium
+                    {% endif %}">
+                        Contact Us
+                    </a>
                 </div>
-                <div class="flex items-center sm:hidden">
-                    <!-- Dark mode toggle for mobile -->
-                    <label for="dark-mode-toggle-mobile"
+            </div>
+            <div class="hidden sm:ml-6 sm:flex sm:items-center">
+                <div class="relative">
+                    <input type="text" placeholder="Search courses..."
+                        class="bg-gray-100 dark:bg-gray-700 rounded-full py-2 px-4 focus:outline-none dark:text-white w-auto text-black">
+                    <button type="submit" class="absolute right-3 top-2.5 text-gray-500 dark:text-gray-400">
+                        <iconify-icon icon="heroicons:magnifying-glass" width="20"></iconify-icon>
+                    </button>
+                </div>
+                <div class="mx-3 flex items-center">
+                    <!-- Dark mode toggle -->
+                    <label for="dark-mode-toggle-desktop"
                         class="flex items-center justify-center cursor-pointer mx-3 p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700">
-                        <input type="checkbox" id="dark-mode-toggle-mobile" class="dark-mode-toggle sr-only">
+                        <input type="checkbox" id="dark-mode-toggle-desktop" class="dark-mode-toggle sr-only">
                         <iconify-icon icon="heroicons:moon" class="text-black dark:hidden" width="25"></iconify-icon>
                         <iconify-icon icon="heroicons:sun" class="dark:text-white dark:inline-block hidden"
                             width="25"></iconify-icon>
                     </label>
-                    <button type="button"
-                        class="mobile-menu-button bg-white dark:bg-gray-800 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary">
-                        <iconify-icon icon="heroicons:bars-3" width="24"></iconify-icon>
-                    </button>
                 </div>
-            </div>
-        </div>
-
-        <!-- Mobile menu, toggle classes based on menu state -->
-        <div class="mobile-menu hidden sm:hidden">
-            <div class="pt-2 pb-3 space-y-1">
-                <a href="{{ url_for('home') }}"
-                    class="bg-primary/10 dark:bg-primary/20 text-primary block pl-3 pr-4 py-2 border-l-4 border-primary font-medium">Home</a>
-                <a href="{{ url_for('courses') }}"
-                    class="text-gray-500 dark:text-gray-300 block pl-3 pr-4 py-2 ml-1 font-medium">Courses</a>
-                <a href="{{ url_for('about') }}"
-                    class="text-gray-500 dark:text-gray-300 block pl-3 pr-4 py-2 ml-1 font-medium">About</a>
-                <a href="{{ url_for('contact_us') }}"
-                    class="text-gray-500 dark:text-gray-300 block pl-3 pr-4 py-2 ml-1 font-medium">Contact Us</a>
-            </div>
-            <div class="pt-4 pb-3 border-t border-gray-200 dark:border-gray-700">
-                <div class="flex items-center px-4">
-                    <a href="{{ url_for('sign_in') }}" class="w-full btn-primary">
+                <div class="shrink-0">
+                    <a href="{{ url_for('sign_in') }}" class="btn-primary">
                         <iconify-icon icon="heroicons:user" width="20"></iconify-icon>
                         <span class="ml-1">Sign In</span>
                     </a>
                 </div>
             </div>
+            <div class="flex items-center sm:hidden">
+                <!-- Dark mode toggle for mobile -->
+                <label for="dark-mode-toggle-mobile"
+                    class="flex items-center justify-center cursor-pointer mx-3 p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700">
+                    <input type="checkbox" id="dark-mode-toggle-mobile" class="dark-mode-toggle sr-only">
+                    <iconify-icon icon="heroicons:moon" class="text-black dark:hidden" width="25"></iconify-icon>
+                    <iconify-icon icon="heroicons:sun" class="dark:text-white dark:inline-block hidden"
+                        width="25"></iconify-icon>
+                </label>
+                <button type="button"
+                    class="mobile-menu-button bg-white dark:bg-gray-800 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary">
+                    <iconify-icon icon="heroicons:bars-3" width="24"></iconify-icon>
+                </button>
+            </div>
         </div>
-    </nav>
+    </div>
+
+    <!-- Mobile menu, toggle classes based on menu state -->
+    <div class="mobile-menu hidden sm:hidden">
+        <div class="pt-2 pb-3 space-y-1">
+            <a href="{{ url_for('home') }}" class="{% if current == 'home' %}
+                        bg-primary/10 dark:bg-primary/20 text-primary block pl-3 pr-4 py-2 border-l-4 border-primary font-medium
+                    {% else %}
+                        text-gray-500 dark:text-gray-300 block pl-3 pr-4 py-2 ml-1 font-medium
+                    {% endif %}">Home</a>
+            <a href="{{ url_for('courses') }}"
+                class="{% if current == 'courses' %}
+                        bg-primary/10 dark:bg-primary/20 text-primary block pl-3 pr-4 py-2 border-l-4 border-primary font-medium
+                    {% else %}
+                        text-gray-500 dark:text-gray-300 block pl-3 pr-4 py-2 ml-1 font-medium
+                    {% endif %}">Courses</a>
+            <a href="{{ url_for('about') }}"
+                class="{% if current == 'about' %}
+                        bg-primary/10 dark:bg-primary/20 text-primary block pl-3 pr-4 py-2 border-l-4 border-primary font-medium
+                    {% else %}
+                        text-gray-500 dark:text-gray-300 block pl-3 pr-4 py-2 ml-1 font-medium
+                    {% endif %}">About</a>
+            <a href="{{ url_for('contact_us') }}"
+                class="{% if current == 'contact_us' %}
+                        bg-primary/10 dark:bg-primary/20 text-primary block pl-3 pr-4 py-2 border-l-4 border-primary font-medium
+                    {% else %}
+                        text-gray-500 dark:text-gray-300 block pl-3 pr-4 py-2 ml-1 font-medium
+                    {% endif %}">Contact Us</a>
+        </div>
+        <div class="pt-4 pb-3 border-t border-gray-200 dark:border-gray-700">
+            <div class="flex items-center px-4">
+                <a href="{{ url_for('sign_in') }}" class="w-full btn-primary">
+                    <iconify-icon icon="heroicons:user" width="20"></iconify-icon>
+                    <span class="ml-1">Sign In</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
