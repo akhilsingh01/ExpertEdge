@@ -14,7 +14,7 @@ def courses():
 def about():
     return render_template('about.html')
 
-@app.route("/contact-Us")
+@app.route("/contact-us")
 def courses():
     return render_template('contact-us.html')
 
