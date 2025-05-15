@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - ExpertEdge</title>
+    <!-- Use compiled CSS instead of CDN -->
+    <link rel="stylesheet" href="/static/css/style.css">
+    <!-- Iconify for icons -->
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body class="bg-gray-50 dark:bg-gray-900 font-sans text-gray-900 dark:text-gray-100 transition-colors duration-200">
+
+    <!-- Navigation -->
+    {% include 'nav.html' %}
+
+    <main>
+        <section class="py-16 bg-gray-50 dark:bg-gray-900">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 id="contact" class="section-title">Get In Touch</h2>
+                    <p class="section-description">Have questions or feedback? We'd love to hear from you!</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-12">
+                    <div class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-sm">
+                        <form method="post" action="https://formspree.io/f/myzwnqlk">
+                            <div class="mb-6">
+                                <label for="name" class="block text-gray-700 dark:text-gray-300 font-medium mb-2">Your
+                                    Name</label>
+                                <input type="text" name="name" id="name"
+                                    class="w-full px-4 py-2 border border-gray-300 dark:border-gray-500 rounded-md">
+                            </div>
+                            <div class="mb-6">
+                                <label for="email" class="block text-gray-700 dark:text-gray-300 font-medium mb-2">Your
+                                    Email</label>
+                                <input type="email" name="email" id="email"
+                                    class="w-full px-4 py-2 border border-gray-300 dark:border-gray-500 rounded-md">
+                            </div>
+                            <div class="mb-6">
+                                <label for="subject"
+                                    class="block text-gray-700 dark:text-gray-300 font-medium mb-2">Subject</label>
+                                <input type="text" name="subject" id="subject"
+                                    class="w-full px-4 py-2 border border-gray-300 dark:border-gray-500 rounded-md">
+                            </div>
+                            <div class="mb-6">
+                                <label for="message"
+                                    class="block text-gray-700 dark:text-gray-300 font-medium mb-2">Your
+                                    Message</label>
+                                <textarea id="message" name="message" rows="5"
+                                    class="w-full px-4 py-2 border border-gray-300 dark:border-gray-500 rounded-md"></textarea>
+                            </div>
+                            <button type="submit" class="btn-primary w-full">
+                                <span>Send Message</span>
+                                <iconify-icon icon="heroicons:paper-airplane" class="ml-2" width="20"></iconify-icon>
+                            </button>
+                        </form>
+                    </div>
+
+                    <div>
+                        <div class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-sm mb-8">
+                            <h3 class="text-xl dark:text-gray-200 font-semibold mb-4">Contact Information</h3>
+                            <ul class="space-y-4">
+                                <li class="flex items-start">
+                                    <iconify-icon icon="heroicons:envelope" class="text-primary mr-3 mt-1"
+                                        width="20"></iconify-icon>
+                                    <span class="text-gray-700 dark:text-gray-400">support@ExpertEdge.com</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <iconify-icon icon="heroicons:phone" class="text-primary mr-3 mt-1"
+                                        width="20"></iconify-icon>
+                                    <span class="text-gray-700 dark:text-gray-400">+1 (123) 456-7890</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <iconify-icon icon="heroicons:map-pin" class="text-primary mr-3 mt-1"
+                                        width="20"></iconify-icon>
+                                    <span class="text-gray-700 dark:text-gray-400">123 Education St, Learning City,
+                                        10001</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-sm">
+                            <h3 class="text-xl dark:text-gray-200 font-semibold mb-4">Connect With Us</h3>
+                            <p class="text-gray-700 dark:text-gray-400 mb-4">Follow us on social media for the latest
+                                updates, educational
+                                tips, and more.</p>
+                            <div class="flex space-x-4">
+                                <a href="#" class="bg-primary/10 hover:bg-primary/20 text-primary p-3 rounded-full">
+                                    <iconify-icon icon="mdi:twitter" width="24"></iconify-icon>
+                                </a>
+                                <a href="#" class="bg-primary/10 hover:bg-primary/20 text-primary p-3 rounded-full">
+                                    <iconify-icon icon="mdi:facebook" width="24"></iconify-icon>
+                                </a>
+                                <a href="#" class="bg-primary/10 hover:bg-primary/20 text-primary p-3 rounded-full">
+                                    <iconify-icon icon="mdi:instagram" width="24"></iconify-icon>
+                                </a>
+                                <a href="#" class="bg-primary/10 hover:bg-primary/20 text-primary p-3 rounded-full">
+                                    <iconify-icon icon="mdi:youtube" width="24"></iconify-icon>
+                                </a>
+                                <a href="#" class="bg-primary/10 hover:bg-primary/20 text-primary p-3 rounded-full">
+                                    <iconify-icon icon="mdi:linkedin" width="24"></iconify-icon>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="w-full">
+                <iframe class="w-full dark:brightness-75"
+                    src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1885.413262861884!2d72.83582482233845!3d19.07136329447857!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1745854761929!5m2!1sen!2sin"
+                    width="1000" height="600" style="border: 0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    {% include 'footer.html' %}
+
+    <!-- Javascript -->
+    <script src="/static/js/main.js"></script>
+</body>
+
+</html>
