@@ -9,7 +9,16 @@
 {% endmacro %}
 
 <!-- Macro for desktop nav links -->
+{% macro mobile_nav_link(endpoint, label) %}
+{% set active = (request.endpoint == endpoint) %}
+<a href="{{ url_for(endpoint) }}" class="pl-3 pr-4 py-2 block font-medium
+            {{ 'bg-primary/10 dark:bg-primary/20 text-primary  border-l-4 border-primary' if active
+               else 'text-gray-500 dark:text-gray-300 ml-1' }}">
+    {{ label }}
+</a>
+{% endmacro %}
 
+<!-- Navbar -->
 <nav class="bg-white dark:bg-gray-800 shadow-sm sticky top-0 z-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
@@ -23,27 +32,6 @@
                     {{ nav_link('courses', 'Courses') }}
                     {{ nav_link('about', 'About') }}
                     {{ nav_link('contact_us', 'Contact Us') }}
-                    <!-- <a href="{{ url_for('courses') }}" class="{% if current == 'courses' %}
-                        border-primary text-primary inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium
-                    {% else %}
-                        text-gray-500 dark:text-gray-300 hover:border-black dark:hover:border-gray-300 hover:border-b-2 hover:text-gray-700 dark:hover:text-white inline-flex items-center px-1 pt-1 text-sm font-medium
-                    {% endif %}">
-                        Courses
-                    </a>
-                    <a href="{{ url_for('about') }}" class="{% if current == 'about' %}
-                        border-primary text-primary inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium
-                    {% else %}
-                        text-gray-500 dark:text-gray-300 hover:border-black dark:hover:border-gray-300 hover:border-b-2 hover:text-gray-700 dark:hover:text-white inline-flex items-center px-1 pt-1 text-sm font-medium
-                    {% endif %}">
-                        About
-                    </a>
-                    <a href="{{ url_for('contact_us') }}" class="{% if current == 'contact_us' %}
-                        border-primary text-primary inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium
-                    {% else %}
-                        text-gray-500 dark:text-gray-300 hover:border-black dark:hover:border-gray-300 hover:border-b-2 hover:text-gray-700 dark:hover:text-white inline-flex items-center px-1 pt-1 text-sm font-medium
-                    {% endif %}">
-                        Contact Us
-                    </a> -->
                 </div>
             </div>
             <div class="hidden sm:ml-6 sm:flex sm:items-center">
@@ -91,26 +79,10 @@
     <!-- Mobile menu, toggle classes based on menu state -->
     <div class="mobile-menu hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
-            <a href="{{ url_for('home') }}" class="{% if current == 'home' %}
-                        bg-primary/10 dark:bg-primary/20 text-primary block pl-3 pr-4 py-2 border-l-4 border-primary font-medium
-                    {% else %}
-                        text-gray-500 dark:text-gray-300 block pl-3 pr-4 py-2 ml-1 font-medium
-                    {% endif %}">Home</a>
-            <a href="{{ url_for('courses') }}" class="{% if current == 'courses' %}
-                        bg-primary/10 dark:bg-primary/20 text-primary block pl-3 pr-4 py-2 border-l-4 border-primary font-medium
-                    {% else %}
-                        text-gray-500 dark:text-gray-300 block pl-3 pr-4 py-2 ml-1 font-medium
-                    {% endif %}">Courses</a>
-            <a href="{{ url_for('about') }}" class="{% if current == 'about' %}
-                        bg-primary/10 dark:bg-primary/20 text-primary block pl-3 pr-4 py-2 border-l-4 border-primary font-medium
-                    {% else %}
-                        text-gray-500 dark:text-gray-300 block pl-3 pr-4 py-2 ml-1 font-medium
-                    {% endif %}">About</a>
-            <a href="{{ url_for('contact_us') }}" class="{% if current == 'contact_us' %}
-                        bg-primary/10 dark:bg-primary/20 text-primary block pl-3 pr-4 py-2 border-l-4 border-primary font-medium
-                    {% else %}
-                        text-gray-500 dark:text-gray-300 block pl-3 pr-4 py-2 ml-1 font-medium
-                    {% endif %}">Contact Us</a>
+            {{ mobile_nav_link('home', 'Home') }}
+            {{ mobile_nav_link('courses', 'Courses') }}
+            {{ mobile_nav_link('about', 'About') }}
+            {{ mobile_nav_link('contact_us', 'Contact Us') }}
         </div>
         <div class="pt-4 pb-3 border-t border-gray-200 dark:border-gray-700">
             <div class="flex items-center px-4">
