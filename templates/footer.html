@@ -25,10 +25,10 @@
                     <div>
                         <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
                         <ul class="space-y-2">
-                            <li><a href="/templates/home.html" class="text-gray-400 hover:text-white">Home</a></li>
-                            <li><a href="/templates/courses.html" class="text-gray-400 hover:text-white">Courses</a></li>
-                            <li><a href="/templates/about.html" class="text-gray-400 hover:text-white">About</a></li>
-                            <li><a href="/templates/contact-us.html" class="text-gray-400 hover:text-white">Contact Us</a>
+                            <li><a href="{{ url_for('home') }}" class="text-gray-400 hover:text-white">Home</a></li>
+                            <li><a href="{{ url_for('courses') }}" class="text-gray-400 hover:text-white">Courses</a></li>
+                            <li><a href="{{ url_for('about') }}" class="text-gray-400 hover:text-white">About</a></li>
+                            <li><a href="{{ url_for('contact_us') }}" class="text-gray-400 hover:text-white">Contact Us</a>
                             </li>
                         </ul>
                     </div>
@@ -36,15 +36,15 @@
                     <div>
                         <h4 class="text-lg font-semibold mb-4">Popular Categories</h4>
                         <ul class="space-y-2">
-                            <li><a href="/templates/courses.html?category=web-development"
+                            <li><a href="{{ url_for('courses') }}"
                                     class="text-gray-400 hover:text-white">Web
                                     Development</a></li>
-                            <li><a href="/templates/courses.html?category=data-science"
+                            <li><a href="{{ url_for('courses') }}"
                                     class="text-gray-400 hover:text-white">Data
                                     Science</a></li>
-                            <li><a href="/templates/courses.html?category=mobile-development"
+                            <li><a href="{{ url_for('courses') }}"
                                     class="text-gray-400 hover:text-white">Mobile Development</a></li>
-                            <li><a href="/templates/courses.html" class="text-gray-400 hover:text-white">View All</a></li>
+                            <li><a href="{{ url_for('courses') }}" class="text-gray-400 hover:text-white">View All</a></li>
                         </ul>
                     </div>
 
@@ -53,7 +53,7 @@
                         <ul class="space-y-2 text-gray-400">
                             <li class="flex items-start">
                                 <iconify-icon icon="heroicons:envelope" class="mr-2 mt-1" width="18"></iconify-icon>
-                                <span>support@ExpertEdge.com</span>
+                                <a href="mailto:help.expertedge@zohomail.in">help.expertedge@zohomail.in</a>
                             </li>
                             <li class="flex items-start">
                                 <iconify-icon icon="heroicons:phone" class="mr-2 mt-1" width="18"></iconify-icon>
@@ -68,7 +68,7 @@
                 </div>
 
                 <div class="mt-12 pt-8 border-t border-gray-800 text-center text-gray-400 text-sm">
-                    <p>&copy; 2023 ExpertEdge. All rights reserved.</p>
+                    <p>&copy; 2025 ExpertEdge. All rights reserved.</p>
                 </div>
             </div>
         </footer>
