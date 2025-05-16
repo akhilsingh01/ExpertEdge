@@ -1,4 +1,4 @@
-<!-- Macro for nav links -->
+<!-- Macro for desktop nav links -->
 {% macro nav_link(endpoint, label) %}
 {% set active = (request.endpoint == endpoint) %}
 <a href="{{ url_for(endpoint) }}" class="inline-flex items-center px-1 pt-1 text-sm font-medium
@@ -7,6 +7,8 @@
     {{ label }}
 </a>
 {% endmacro %}
+
+<!-- Macro for desktop nav links -->
 
 <nav class="bg-white dark:bg-gray-800 shadow-sm sticky top-0 z-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
