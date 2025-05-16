@@ -2,19 +2,19 @@ from flask import Flask, render_template
 
 app = Flask(__name__)
 
-@app.route("/")
+@app.route('/', endpoint='home')
 def home():
-    return render_template('home.html')
+    return render_template('index.html')
 
-@app.route("/courses")
+@app.route('/courses', endpoint='courses')
 def courses():
     return render_template('courses.html')
 
-@app.route("/about")
+@app.route('/about', endpoint='about')
 def about():
     return render_template('about.html')
 
-@app.route("/contact-us")
+@app.route('/contact-us', endpoint='contact_us')
 def contact_us():
     return render_template('contact-us.html')
 
