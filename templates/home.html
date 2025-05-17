@@ -29,10 +29,10 @@
                     <p class="mt-6 text-lg text-gray-300">Access thousands of high-quality courses
                         and resources at no cost. Learn at your own pace and build valuable skills.</p>
                     <div class="mt-8 flex flex-col sm:flex-row gap-4 sm:gap-x-8">
-                        <a href="/templates/courses.html" class="bg-white btn-primary text-primary hover:bg-gray-200">
+                        <a href="{{ url_for('courses') }}" class="bg-white btn-primary text-primary hover:bg-gray-200">
                             <span>Explore Courses</span>
                         </a>
-                        <a href="/templates/sign-up.html"
+                        <a href="{{ url_for('sign_up') }}"
                             class="btn-primary py-3 px-6 border border-white hover:bg-white hover:text-primary">
                             <span>Get Started</span>
                         </a>
@@ -101,7 +101,7 @@
                     <h2 class="section-title">Popular Courses</h2>
                     <p class="section-description">Find a course that matches your learning goals</p>
                 </div>
-                <a href="/templates/courses.html"
+                <a href="{{ url_for('courses') }}"
                     class="hidden sm:flex items-center text-primary hover:text-primary/80 font-medium">
                     <span>View All</span>
                     <iconify-icon icon="heroicons:arrow-right" class="ml-1" width="18"></iconify-icon>
@@ -131,7 +131,7 @@
                             <div class="flex items-center">
                                 <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full">Beginner</span>
                             </div>
-                            <a href="/templates/course-detail.html" class="text-primary font-medium">Start
+                            <a href="{{ url_for('course_detail') }}" class="text-primary font-medium">Start
                                 Learning
                                 →</a>
                         </div>
@@ -159,7 +159,7 @@
                             <div class="flex items-center">
                                 <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full">Beginner</span>
                             </div>
-                            <a href="/templates/course-detail.html" class="text-primary font-medium">Start
+                            <a href="{{ url_for('course_detail') }}" class="text-primary font-medium">Start
                                 Learning
                                 →</a>
                         </div>
@@ -188,7 +188,7 @@
                             <div class="flex items-center">
                                 <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full">Beginner</span>
                             </div>
-                            <a href="/templates/course-detail.html" class="text-primary font-medium">Start
+                            <a href="{{ url_for('course_detail') }}" class="text-primary font-medium">Start
                                 Learning
                                 →</a>
                         </div>
@@ -196,7 +196,7 @@
                 </div>
 
                 <div class="mt-12 text-center sm:hidden">
-                    <a href="/templates/courses.html" class="btn-primary">
+                    <a href="{{ url_for('courses') }}" class="btn-primary">
                         <span>View All Courses</span>
                         <iconify-icon icon="heroicons:arrow-right" class="ml-1" width="18"></iconify-icon>
                     </a>
@@ -294,7 +294,7 @@
             <p class="text-xl text-white/80 max-w-2xl mx-auto mb-8">Join thousands of learners already expanding
                 their
                 knowledge through our carefully curated content.</p>
-            <a href="/templates/sign-up.html"
+            <a href="{{ url_for('sign_up') }}"
                 class="bg-white text-primary hover:bg-white/90 py-3 px-8 rounded-md inline-flex items-center justify-center font-medium">
                 <span>Get Started</span>
                 <iconify-icon icon="heroicons:arrow-right" class="ml-2" width="20"></iconify-icon>

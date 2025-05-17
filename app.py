@@ -10,6 +10,10 @@ def home():
 def courses():
     return render_template('courses.html')
 
+@app.route('/courses-detail')
+def course_detail():
+    return render_template('course-deatil.html')
+
 @app.route('/about')
 def about():
     return render_template('about.html')
