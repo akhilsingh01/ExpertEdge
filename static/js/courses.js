@@ -1,15 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
 
-    // 1) Auto-check category from URL
-    const params = new URLSearchParams(window.location.search);
-    const cat = params.get('category');
-    if (cat) {
-        const checkbox = document.querySelector(`input[data-category="${cat}"]`);
-        if (checkbox && !checkbox.checked) {
-            checkbox.checked = true;
-        }
-    }
-
     // Connect the header search to the main search functionality
     const headerSearchInput = document.querySelector('nav input[placeholder="Search courses..."]');
     const mainSearchInput = document.getElementById('course-search');
