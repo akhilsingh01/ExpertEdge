@@ -12,7 +12,7 @@ def courses():
 
 @app.route('/courses-detail')
 def course_detail():
-    return render_template('course-deatil.html')
+    return render_template('course-detail.html')
 
 @app.route('/about')
 def about():
