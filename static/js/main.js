@@ -18,12 +18,13 @@ document.addEventListener('DOMContentLoaded', function () {
             if (e.key === 'Enter') {
                 const searchTerm = this.value.trim();
                 if (searchTerm) {
-                    window.location.href = `pages/courses.html?q=${encodeURIComponent(searchTerm)}`;
+                    sessionStorage.setItem('searchTerm', searchTerm);
+                    window.location.href = `courses`
                 }
             }
         });
     }
-    
+
     // const searchInput = document.querySelector('input[placeholder="Search courses..."]');
     // if (searchInput) {
     //     searchInput.addEventListener('keyup', function (e) {

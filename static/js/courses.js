@@ -1,15 +1,13 @@
 document.addEventListener('DOMContentLoaded', function () {
 
     // Connect the header search to the main search functionality
-    const headerSearchInput = document.querySelector('nav input[placeholder="Search courses..."]');
     const mainSearchInput = document.getElementById('course-search');
 
-    if (headerSearchInput && mainSearchInput) {
-        headerSearchInput.addEventListener('input', function () {
-            mainSearchInput.value = this.value;
-            // Trigger the search event
-            mainSearchInput.dispatchEvent(new Event('input'));
-        });
+    const getSearch = sessionStorage.getItem('searchTerm')
+    if (getSearch) {
+        mainSearchInput.value = getSearch;
+        mainSearchInput.dispatchEvent(new Event('input'));
+        sessionStorage.removeItem('searchTerm');
     }
 
     // Course filtering functionality
