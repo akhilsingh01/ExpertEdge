@@ -61,7 +61,7 @@
                     {% else %}
                     <div class="inline-flex items-center text-sm font-medium mr-3 dark:text-gray-200">
                         <iconify-icon icon="heroicons:user-circle" width="20"></iconify-icon>
-                        <span >{{ current_user.displayName or current_user.email }}</span>
+                        <span>{{ current_user.displayName or current_user.email }}</span>
                     </div>
                     <a href="{{ url_for('sign_out') }}" class="btn-primary">
                         <iconify-icon icon="heroicons:arrow-right-on_rectangle" width="20"></iconify-icon>
@@ -98,10 +98,21 @@
         </div>
         <div class="pt-4 pb-3 border-t border-gray-200 dark:border-gray-700">
             <div class="flex items-center px-4">
+                {% if not current_user %}
                 <a href="{{ url_for('sign_in') }}" class="w-full btn-primary">
                     <iconify-icon icon="heroicons:user" width="20"></iconify-icon>
                     <span class="ml-1">Sign In</span>
                 </a>
+                {% else %}
+                <div class="inline-flex items-center text-sm font-medium mr-3 dark:text-gray-200">
+                    <iconify-icon icon="heroicons:user-circle" width="20"></iconify-icon>
+                    <span>{{ current_user.displayName or current_user.email }}</span>
+                </div>
+                <a href="{{ url_for('sign_out') }}" class="btn-primary">
+                    <iconify-icon icon="heroicons:arrow-right-on_rectangle" width="20"></iconify-icon>
+                    <span class="ml-1">Log Out</span>
+                </a>
+                {% endif %}
             </div>
         </div>
     </div>
