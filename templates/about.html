@@ -1,221 +1,200 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'layout.html' %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - ExpertEdge></title>
-    <!-- Use compiled CSS instead of CDN -->
-    <link rel="stylesheet" href="/static/css/style.css">
-    <!-- Iconify for icons -->
-    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
-    <!-- Google Fonts - Inter -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-</head>
+{% block title %}<title>About Us - ExpertEdge></title>{% endblock %}
 
-<body class="bg-gray-50 dark:bg-gray-900 font-sans text-gray-900 dark:text-gray-100 transition-colors duration-200">
+{% block body %}
 
-    <!-- Navigation -->
-    {% include 'nav.html' %}
-
-    <!-- Header Section -->
-    <div class="bg-white dark:bg-gray-800 shadow-sm">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center">
-            <h1 class="text-3xl font-bold text-gray-900 dark:text-white">About ExpertEdge</h1>
-            <p class="mt-2 text-lg text-gray-600 dark:text-gray-300">Learn about our mission, team, and how we help
-                people learn effectively</p>
-        </div>
+<!-- Header Section -->
+<div class="bg-white dark:bg-gray-800 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center">
+        <h1 class="text-3xl font-bold text-gray-900 dark:text-white">About ExpertEdge</h1>
+        <p class="mt-2 text-lg text-gray-600 dark:text-gray-300">Learn about our mission, team, and how we help
+            people learn effectively</p>
     </div>
+</div>
 
-    <!-- About Content -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div>
-            <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">Our Mission</h2>
-            <div class="h-1 w-25 bg-primary mt-4 mb-6"></div>
-            <p class="text-gray-700 dark:text-gray-300 mb-6">
-                At ExpertEdge, we believe that everyone deserves access to high-quality educational content. Our mission
-                is to organize the vast amount of educational videos and present them in structured, coherent courses
-                that help you learn efficiently.
-            </p>
-            <p class="text-gray-700 dark:text-gray-300 mb-6">
-                We curate content from the best educators, organize it into logical learning paths, and
-                provide additional resources to enhance your learning experience. Our goal is to make online learning
-                more accessible, effective, and enjoyable.
-            </p>
+<!-- About Content -->
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div>
+        <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">Our Mission</h2>
+        <div class="h-1 w-25 bg-primary mt-4 mb-6"></div>
+        <p class="text-gray-700 dark:text-gray-300 mb-6">
+            At ExpertEdge, we believe that everyone deserves access to high-quality educational content. Our mission
+            is to organize the vast amount of educational videos and present them in structured, coherent courses
+            that help you learn efficiently.
+        </p>
+        <p class="text-gray-700 dark:text-gray-300 mb-6">
+            We curate content from the best educators, organize it into logical learning paths, and
+            provide additional resources to enhance your learning experience. Our goal is to make online learning
+            more accessible, effective, and enjoyable.
+        </p>
 
-            <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6 mt-12">How ExpertEdge Works</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-                <div class="bg-white dark:bg-gray-800 p-6 rounded-lg hover-lift">
-                    <div
-                        class="w-12 h-12 bg-primary/10 dark:bg-primary/20 rounded-lg flex items-center justify-center mb-4">
-                        <span class="text-primary font-bold text-xl">1</span>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-2 dark:text-white">Curation</h3>
-                    <p class="text-gray-700 dark:text-gray-400">Our expert team gathers best educators to provide the
-                        highest quality educational content.</p>
+        <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6 mt-12">How ExpertEdge Works</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+            <div class="bg-white dark:bg-gray-800 p-6 rounded-lg hover-lift">
+                <div
+                    class="w-12 h-12 bg-primary/10 dark:bg-primary/20 rounded-lg flex items-center justify-center mb-4">
+                    <span class="text-primary font-bold text-xl">1</span>
                 </div>
+                <h3 class="text-xl font-semibold mb-2 dark:text-white">Curation</h3>
+                <p class="text-gray-700 dark:text-gray-400">Our expert team gathers best educators to provide the
+                    highest quality educational content.</p>
+            </div>
 
-                <div class="bg-white dark:bg-gray-800 p-6 rounded-lg hover-lift">
-                    <div
-                        class="w-12 h-12 bg-primary/10 dark:bg-primary/20 rounded-lg flex items-center justify-center mb-4">
-                        <span class="text-primary font-bold text-xl">2</span>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-2 dark:text-white">Organization</h3>
-                    <p class="text-gray-700 dark:text-gray-400">We organize videos into structured courses with clear
-                        learning paths and progression.</p>
+            <div class="bg-white dark:bg-gray-800 p-6 rounded-lg hover-lift">
+                <div
+                    class="w-12 h-12 bg-primary/10 dark:bg-primary/20 rounded-lg flex items-center justify-center mb-4">
+                    <span class="text-primary font-bold text-xl">2</span>
                 </div>
+                <h3 class="text-xl font-semibold mb-2 dark:text-white">Organization</h3>
+                <p class="text-gray-700 dark:text-gray-400">We organize videos into structured courses with clear
+                    learning paths and progression.</p>
+            </div>
 
-                <div class="bg-white dark:bg-gray-800 p-6 rounded-lg hover-lift">
-                    <div
-                        class="w-12 h-12 bg-primary/10 dark:bg-primary/20 rounded-lg flex items-center justify-center mb-4">
-                        <span class="text-primary font-bold text-xl">3</span>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-2 dark:text-white">Enhanced Learning</h3>
-                    <p class="text-gray-700 dark:text-gray-400">We track your progress, provide additional resources,
-                        and help you stay motivated.</p>
+            <div class="bg-white dark:bg-gray-800 p-6 rounded-lg hover-lift">
+                <div
+                    class="w-12 h-12 bg-primary/10 dark:bg-primary/20 rounded-lg flex items-center justify-center mb-4">
+                    <span class="text-primary font-bold text-xl">3</span>
                 </div>
+                <h3 class="text-xl font-semibold mb-2 dark:text-white">Enhanced Learning</h3>
+                <p class="text-gray-700 dark:text-gray-400">We track your progress, provide additional resources,
+                    and help you stay motivated.</p>
             </div>
         </div>
     </div>
+</div>
 
-    <!-- Our Story Section -->
-    <section class="py-16 bg-white dark:bg-gray-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div>
-                    <h2 class="section-title">Our Story</h2>
-                    <div class="h-1 w-25 bg-primary mt-4 mb-6"></div>
-                    <div class="section-description">
-                        <p class="mb-6">ExpertEdge was founded in 2024 with a simple mission: to make
-                            quality education accessible to everyone, regardless of their background or location.</p>
-                        <p class="mb-6">We believe that knowledge should be freely accessible, and
-                            that by support of many educators, we can create a structured learning experience that helps
-                            people achieve their goals.</p>
-                        <p>Our team is made up of passionate educators, technologists, and
-                            lifelong learners who work tirelessly to curate the best educational videos and organize
-                            them
-                            into coherent, comprehensive courses.</p>
-                    </div>
+<!-- Our Story Section -->
+<section class="py-16 bg-white dark:bg-gray-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <h2 class="section-title">Our Story</h2>
+                <div class="h-1 w-25 bg-primary mt-4 mb-6"></div>
+                <div class="section-description">
+                    <p class="mb-6">ExpertEdge was founded in 2024 with a simple mission: to make
+                        quality education accessible to everyone, regardless of their background or location.</p>
+                    <p class="mb-6">We believe that knowledge should be freely accessible, and
+                        that by support of many educators, we can create a structured learning experience that helps
+                        people achieve their goals.</p>
+                    <p>Our team is made up of passionate educators, technologists, and
+                        lifelong learners who work tirelessly to curate the best educational videos and organize
+                        them
+                        into coherent, comprehensive courses.</p>
                 </div>
-                <div>
-                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
-                        alt="Our team at work" class="rounded-lg shadow-xl hover-lift">
+            </div>
+            <div>
+                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
+                    alt="Our team at work" class="rounded-lg shadow-xl hover-lift">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Our Values Section -->
+<section class="py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <h2 class="section-title">Our Values</h2>
+            <p class="section-description">These core principles guide everything we do at ExpertEdge.</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="bg-white dark:bg-gray-800 p-6 rounded-xl hover-lift">
+                <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                    <iconify-icon icon="heroicons:light-bulb" width="24" class="text-primary"></iconify-icon>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Accessibility</h3>
+                <p class="text-gray-700 dark:text-gray-400">We believe education should be available to everyone,
+                    regardless of
+                    financial circumstances or geographic location.</p>
+            </div>
+
+            <div class="bg-white dark:bg-gray-800 p-6 rounded-xl hover-lift">
+                <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                    <iconify-icon icon="heroicons:star" width="24" class="text-primary"></iconify-icon>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Quality</h3>
+                <p class="text-gray-700 dark:text-gray-400">We carefully curate content to ensure our learners
+                    receive accurate,
+                    up-to-date, and engaging educational materials.</p>
+            </div>
+
+            <div class="bg-white dark:bg-gray-800 p-6 rounded-xl hover-lift">
+                <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                    <iconify-icon icon="heroicons:user-group" width="24" class="text-primary"></iconify-icon>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Community</h3>
+                <p class="text-gray-700 dark:text-gray-400">We foster a supportive community where learners can
+                    connect, collaborate,
+                    and support each other on their educational journeys.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Our Team Section -->
+<section class="py-16 bg-white dark:bg-gray-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <h2 class="section-title">Meet Our Team</h2>
+            <p class="section-description">The passionate individuals behind ExpertEdge.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Team Member 1 -->
+            <div class="bg-gray-100 dark:bg-gray-900 rounded-xl shadow-sm overflow-hidden hover-lift text-center">
+                <div class="p-4">
+                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
+                        alt="John Doe" class="w-32 h-32 object-cover rounded-full mx-auto mb-4">
+                    <h3 class="text-xl font-semibold mb-1 dark:text-white">John Doe</h3>
+                    <p class="text-primary font-medium mb-2">Founder & CEO</p>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">Former educator with a passion for
+                        making learning
+                        accessible to everyone.</p>
+                </div>
+            </div>
+
+            <!-- Team Member 2 -->
+            <div class="bg-gray-100 dark:bg-gray-900 rounded-xl shadow-sm overflow-hidden hover-lift text-center">
+                <div class="p-4">
+                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
+                        alt="Jane Smith" class="w-32 h-32 object-cover rounded-full mx-auto mb-4">
+                    <h3 class="text-xl font-semibold mb-1">Jane Smith</h3>
+                    <p class="text-primary font-medium mb-2">Chief Content Officer</p>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">Experienced curriculum developer with a
+                        knack for finding
+                        the best educational videos.</p>
+                </div>
+            </div>
+
+            <!-- Team Member 3 -->
+            <div class="bg-gray-100 dark:bg-gray-900 rounded-xl shadow-sm overflow-hidden hover-lift text-center">
+                <div class="p-4">
+                    <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
+                        alt="David Johnson" class="w-32 h-32 object-cover rounded-full mx-auto mb-4">
+                    <h3 class="text-xl font-semibold mb-1">David Johnson</h3>
+                    <p class="text-primary font-medium mb-2">CTO</p>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">Tech enthusiast who ensures our
+                        platform runs smoothly and
+                        securely for all users.</p>
+                </div>
+            </div>
+
+            <!-- Team Member 4 -->
+            <div class="bg-gray-100 dark:bg-gray-900 rounded-xl shadow-sm overflow-hidden hover-lift text-center">
+                <div class="p-4">
+                    <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
+                        alt="Sarah Williams" class="w-32 h-32 object-cover rounded-full mx-auto mb-4">
+                    <h3 class="text-xl font-semibold mb-1">Sarah Williams</h3>
+                    <p class="text-primary font-medium mb-2">Community Manager</p>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">Dedicated to fostering a supportive
+                        learning community and
+                        hearing from our users.</p>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Our Values Section -->
-    <section class="py-16">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="section-title">Our Values</h2>
-                <p class="section-description">These core principles guide everything we do at ExpertEdge.</p>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-white dark:bg-gray-800 p-6 rounded-xl hover-lift">
-                    <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-                        <iconify-icon icon="heroicons:light-bulb" width="24" class="text-primary"></iconify-icon>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-2">Accessibility</h3>
-                    <p class="text-gray-700 dark:text-gray-400">We believe education should be available to everyone,
-                        regardless of
-                        financial circumstances or geographic location.</p>
-                </div>
-
-                <div class="bg-white dark:bg-gray-800 p-6 rounded-xl hover-lift">
-                    <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-                        <iconify-icon icon="heroicons:star" width="24" class="text-primary"></iconify-icon>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-2">Quality</h3>
-                    <p class="text-gray-700 dark:text-gray-400">We carefully curate content to ensure our learners
-                        receive accurate,
-                        up-to-date, and engaging educational materials.</p>
-                </div>
-
-                <div class="bg-white dark:bg-gray-800 p-6 rounded-xl hover-lift">
-                    <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-                        <iconify-icon icon="heroicons:user-group" width="24" class="text-primary"></iconify-icon>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-2">Community</h3>
-                    <p class="text-gray-700 dark:text-gray-400">We foster a supportive community where learners can
-                        connect, collaborate,
-                        and support each other on their educational journeys.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Our Team Section -->
-    <section class="py-16 bg-white dark:bg-gray-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="section-title">Meet Our Team</h2>
-                <p class="section-description">The passionate individuals behind ExpertEdge.</p>
-            </div>
-
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- Team Member 1 -->
-                <div class="bg-gray-100 dark:bg-gray-900 rounded-xl shadow-sm overflow-hidden hover-lift text-center">
-                    <div class="p-4">
-                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
-                            alt="John Doe" class="w-32 h-32 object-cover rounded-full mx-auto mb-4">
-                        <h3 class="text-xl font-semibold mb-1 dark:text-white">John Doe</h3>
-                        <p class="text-primary font-medium mb-2">Founder & CEO</p>
-                        <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">Former educator with a passion for
-                            making learning
-                            accessible to everyone.</p>
-                    </div>
-                </div>
-
-                <!-- Team Member 2 -->
-                <div class="bg-gray-100 dark:bg-gray-900 rounded-xl shadow-sm overflow-hidden hover-lift text-center">
-                    <div class="p-4">
-                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
-                            alt="Jane Smith" class="w-32 h-32 object-cover rounded-full mx-auto mb-4">
-                        <h3 class="text-xl font-semibold mb-1">Jane Smith</h3>
-                        <p class="text-primary font-medium mb-2">Chief Content Officer</p>
-                        <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">Experienced curriculum developer with a
-                            knack for finding
-                            the best educational videos.</p>
-                    </div>
-                </div>
-
-                <!-- Team Member 3 -->
-                <div class="bg-gray-100 dark:bg-gray-900 rounded-xl shadow-sm overflow-hidden hover-lift text-center">
-                    <div class="p-4">
-                        <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
-                            alt="David Johnson" class="w-32 h-32 object-cover rounded-full mx-auto mb-4">
-                        <h3 class="text-xl font-semibold mb-1">David Johnson</h3>
-                        <p class="text-primary font-medium mb-2">CTO</p>
-                        <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">Tech enthusiast who ensures our
-                            platform runs smoothly and
-                            securely for all users.</p>
-                    </div>
-                </div>
-
-                <!-- Team Member 4 -->
-                <div class="bg-gray-100 dark:bg-gray-900 rounded-xl shadow-sm overflow-hidden hover-lift text-center">
-                    <div class="p-4">
-                        <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
-                            alt="Sarah Williams" class="w-32 h-32 object-cover rounded-full mx-auto mb-4">
-                        <h3 class="text-xl font-semibold mb-1">Sarah Williams</h3>
-                        <p class="text-primary font-medium mb-2">Community Manager</p>
-                        <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">Dedicated to fostering a supportive
-                            learning community and
-                            hearing from our users.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    {% include 'footer.html' %}
-
-    <!-- Javascript -->
-    <script src="/static/js/main.js"></script>
-</body>
-
-</html>
+{% endblock %}

@@ -1,481 +1,468 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'layout.html' %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Course Detail - ExpertEdge</title>
-    <link rel="stylesheet" href="/static/css/style.css">
-    <!-- Iconify for icons -->
-    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-</head>
+{% block title %}<title>Course Detail - ExpertEdge</title>{% endblock %}
 
-<body class="bg-gray-50 dark:bg-gray-900 font-sans text-gray-900 dark:text-gray-100 transition-colors duration-200">
+{% block body %}
 
-    <!-- Navigation -->
-    {% include 'nav.html' %}
-
-    <!-- Course Detail Hero Section -->
-    <div class="bg-white dark:bg-gray-800 shadow-sm mb-8">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-            <div class="flex flex-col md:flex-row md:space-x-8">
-                <!-- Course Info -->
-                <div class="md:w-2/3">
-                    <div class="flex items-center space-x-2 mb-2">
-                        <span id="course-category"
-                            class="bg-indigo-100 text-indigo-700 text-xs px-2 py-1 rounded-full">Web Development</span>
-                        <span id="course-level"
-                            class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full">Beginner</span>
-                        <span id="course-duration" class="text-sm text-gray-500 dark:text-gray-400">4.2 Hours</span>
+<!-- Course Detail Hero Section -->
+<div class="bg-white dark:bg-gray-800 shadow-sm mb-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="flex flex-col md:flex-row md:space-x-8">
+            <!-- Course Info -->
+            <div class="md:w-2/3">
+                <div class="flex items-center space-x-2 mb-2">
+                    <span id="course-category" class="bg-indigo-100 text-indigo-700 text-xs px-2 py-1 rounded-full">Web
+                        Development</span>
+                    <span id="course-level"
+                        class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full">Beginner</span>
+                    <span id="course-duration" class="text-sm text-gray-500 dark:text-gray-400">4.2 Hours</span>
+                </div>
+                <h1 id="course-title" class="text-3xl font-bold mb-2 text-gray-900 dark:text-white">HTML & CSS
+                    Fundamentals</h1>
+                <p id="course-description" class="text-lg text-gray-600 dark:text-gray-300 mb-6">Learn the basics of
+                    HTML and CSS to create responsive websites from scratch.</p>
+                <div class="flex flex-wrap items-center space-x-6">
+                    <div class="flex items-center space-x-2">
+                        <iconify-icon icon="heroicons:user-group" width="20" class="text-gray-500"></iconify-icon>
+                        <span id="student-count" class="text-gray-700 dark:text-gray-300">12,345 students</span>
                     </div>
-                    <h1 id="course-title" class="text-3xl font-bold mb-2 text-gray-900 dark:text-white">HTML & CSS
-                        Fundamentals</h1>
-                    <p id="course-description" class="text-lg text-gray-600 dark:text-gray-300 mb-6">Learn the basics of
-                        HTML and CSS to create responsive websites from scratch.</p>
-                    <div class="flex flex-wrap items-center space-x-6">
-                        <div class="flex items-center space-x-2">
-                            <iconify-icon icon="heroicons:user-group" width="20" class="text-gray-500"></iconify-icon>
-                            <span id="student-count" class="text-gray-700 dark:text-gray-300">12,345 students</span>
-                        </div>
-                        <div class="flex items-center space-x-2">
-                            <iconify-icon icon="heroicons:star" width="20" class="text-yellow-500"></iconify-icon>
-                            <span id="rating" class="text-gray-700 dark:text-gray-300">4.8 (234 reviews)</span>
-                        </div>
-                        <div class="flex items-center space-x-2">
-                            <iconify-icon icon="heroicons:clock" width="20" class="text-gray-500"></iconify-icon>
-                            <span id="last-updated" class="text-gray-700 dark:text-gray-300">Updated April 2025</span>
-                        </div>
+                    <div class="flex items-center space-x-2">
+                        <iconify-icon icon="heroicons:star" width="20" class="text-yellow-500"></iconify-icon>
+                        <span id="rating" class="text-gray-700 dark:text-gray-300">4.8 (234 reviews)</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <iconify-icon icon="heroicons:clock" width="20" class="text-gray-500"></iconify-icon>
+                        <span id="last-updated" class="text-gray-700 dark:text-gray-300">Updated April 2025</span>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
-    <!-- Main Content -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
-        <div class="flex flex-col lg:flex-row gap-8">
-            <!-- Left Column - Video and Content -->
-            <div class="lg:w-2/3">
-                <!-- Video Player -->
-                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-sm p-6 mb-8">
-                    <h2 class="text-xl font-bold mb-4 text-gray-900 dark:text-white">Course Content</h2>
-                    <div class="video-container mb-4">
-                        <video controls width="650">
-                            <source src="{{ url_for('static', filename='videos/video.mp4') }}" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                    </div>
+<!-- Main Content -->
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+    <div class="flex flex-col lg:flex-row gap-8">
+        <!-- Left Column - Video and Content -->
+        <div class="lg:w-2/3">
+            <!-- Video Player -->
+            <div class="bg-white dark:bg-gray-800 rounded-xl shadow-sm p-6 mb-8">
+                <h2 class="text-xl font-bold mb-4 text-gray-900 dark:text-white">Course Content</h2>
+                <div class="video-container mb-4">
+                    <video controls width="650">
+                        <source src="{{ url_for('static', filename='videos/video.mp4') }}" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+
+            <!-- Course Tabs -->
+            <div class="bg-white dark:bg-gray-800 rounded-xl shadow-sm overflow-hidden">
+                <div class="border-b border-gray-200 dark:border-gray-700">
+                    <nav class="course-tabs flex -mb-px" aria-label="Tabs">
+                        <button
+                            class="active-tab tab-btn w-1/4 py-4 px-1 text-center border-b-2 font-medium text-sm border-transparent hover:text-gray-700 dark:hover:text-gray-300 hover:border-gray-300"
+                            data-tab="overview">
+                            Overview
+                        </button>
+                        <button
+                            class="tab-btn w-1/4 py-4 px-1 text-center border-b-2 border-transparent font-medium text-sm text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 hover:border-gray-300"
+                            data-tab="curriculum">
+                            Curriculum
+                        </button>
+                        <button
+                            class="tab-btn w-1/4 py-4 px-1 text-center border-b-2 border-transparent font-medium text-sm text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 hover:border-gray-300"
+                            data-tab="instructor">
+                            Instructor
+                        </button>
+                        <button
+                            class="tab-btn w-1/4 py-4 px-1 text-center border-b-2 border-transparent font-medium text-sm text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 hover:border-gray-300"
+                            data-tab="reviews">
+                            Reviews
+                        </button>
+                    </nav>
                 </div>
 
-                <!-- Course Tabs -->
-                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-sm overflow-hidden">
-                    <div class="border-b border-gray-200 dark:border-gray-700">
-                        <nav class="course-tabs flex -mb-px" aria-label="Tabs">
-                            <button
-                                class="active-tab tab-btn w-1/4 py-4 px-1 text-center border-b-2 font-medium text-sm border-transparent hover:text-gray-700 dark:hover:text-gray-300 hover:border-gray-300"
-                                data-tab="overview">
-                                Overview
-                            </button>
-                            <button
-                                class="tab-btn w-1/4 py-4 px-1 text-center border-b-2 border-transparent font-medium text-sm text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 hover:border-gray-300"
-                                data-tab="curriculum">
-                                Curriculum
-                            </button>
-                            <button
-                                class="tab-btn w-1/4 py-4 px-1 text-center border-b-2 border-transparent font-medium text-sm text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 hover:border-gray-300"
-                                data-tab="instructor">
-                                Instructor
-                            </button>
-                            <button
-                                class="tab-btn w-1/4 py-4 px-1 text-center border-b-2 border-transparent font-medium text-sm text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 hover:border-gray-300"
-                                data-tab="reviews">
-                                Reviews
-                            </button>
-                        </nav>
+                <!-- Tab Content -->
+                <div class="p-6">
+                    <!-- Overview Tab (Default Active) -->
+                    <div id="overview" class="tab-content active">
+                        <h3 class="text-xl font-bold mb-4 text-gray-900 dark:text-white">About This Course</h3>
+                        <p class="mb-4 text-gray-700 dark:text-gray-300">
+                            This comprehensive course is designed to take you from beginner to confident HTML and
+                            CSS developer.
+                            You'll start with the very basics and progress through all the essential concepts of
+                            creating modern,
+                            responsive websites.
+                        </p>
+                        <p class="mb-4 text-gray-700 dark:text-gray-300">
+                            By the end of this course, you'll be able to:
+                        </p>
+                        <ul class="list-disc pl-6 mb-6 text-gray-700 dark:text-gray-300 space-y-2">
+                            <li>Understand and write semantic HTML5</li>
+                            <li>Style webpages using CSS3</li>
+                            <li>Create responsive layouts that work on any device</li>
+                            <li>Implement flexbox and CSS grid for modern layouts</li>
+                            <li>Build a complete project from scratch</li>
+                        </ul>
+
+                        <h3 class="text-xl font-bold mb-4 text-gray-900 dark:text-white">Who This Course Is For</h3>
+                        <ul class="list-disc pl-6 mb-6 text-gray-700 dark:text-gray-300 space-y-2">
+                            <li>Complete beginners with no previous coding experience</li>
+                            <li>Those looking to refresh their HTML & CSS skills</li>
+                            <li>Designers looking to code their own designs</li>
+                            <li>Anyone wanting to learn web development fundamentals</li>
+                        </ul>
+
+                        <h3 class="text-xl font-bold mb-4 text-gray-900 dark:text-white">Requirements</h3>
+                        <ul class="list-disc pl-6 text-gray-700 dark:text-gray-300 space-y-2">
+                            <li>A computer with internet access</li>
+                            <li>No previous coding experience required</li>
+                            <li>Basic computer skills</li>
+                            <li>Any text editor (recommendations provided in the course)</li>
+                        </ul>
                     </div>
 
-                    <!-- Tab Content -->
-                    <div class="p-6">
-                        <!-- Overview Tab (Default Active) -->
-                        <div id="overview" class="tab-content active">
-                            <h3 class="text-xl font-bold mb-4 text-gray-900 dark:text-white">About This Course</h3>
-                            <p class="mb-4 text-gray-700 dark:text-gray-300">
-                                This comprehensive course is designed to take you from beginner to confident HTML and
-                                CSS developer.
-                                You'll start with the very basics and progress through all the essential concepts of
-                                creating modern,
-                                responsive websites.
-                            </p>
-                            <p class="mb-4 text-gray-700 dark:text-gray-300">
-                                By the end of this course, you'll be able to:
-                            </p>
-                            <ul class="list-disc pl-6 mb-6 text-gray-700 dark:text-gray-300 space-y-2">
-                                <li>Understand and write semantic HTML5</li>
-                                <li>Style webpages using CSS3</li>
-                                <li>Create responsive layouts that work on any device</li>
-                                <li>Implement flexbox and CSS grid for modern layouts</li>
-                                <li>Build a complete project from scratch</li>
-                            </ul>
+                    <!-- Curriculum Tab -->
+                    <div id="curriculum" class="tab-content hidden">
+                        <h3 class="text-xl font-bold mb-4 text-gray-900 dark:text-white">Course Curriculum</h3>
 
-                            <h3 class="text-xl font-bold mb-4 text-gray-900 dark:text-white">Who This Course Is For</h3>
-                            <ul class="list-disc pl-6 mb-6 text-gray-700 dark:text-gray-300 space-y-2">
-                                <li>Complete beginners with no previous coding experience</li>
-                                <li>Those looking to refresh their HTML & CSS skills</li>
-                                <li>Designers looking to code their own designs</li>
-                                <li>Anyone wanting to learn web development fundamentals</li>
-                            </ul>
-
-                            <h3 class="text-xl font-bold mb-4 text-gray-900 dark:text-white">Requirements</h3>
-                            <ul class="list-disc pl-6 text-gray-700 dark:text-gray-300 space-y-2">
-                                <li>A computer with internet access</li>
-                                <li>No previous coding experience required</li>
-                                <li>Basic computer skills</li>
-                                <li>Any text editor (recommendations provided in the course)</li>
+                        <!-- Section 1 -->
+                        <div class="border-b border-gray-200 dark:border-gray-700 pb-4 mb-4">
+                            <div class="flex justify-between items-center mb-2">
+                                <h4 class="text-lg font-semibold text-gray-900 dark:text-white">1. Introduction to
+                                    HTML</h4>
+                                <span class="text-sm text-gray-500 dark:text-gray-400">3 lessons (45 min)</span>
+                            </div>
+                            <ul class="space-y-2 pl-4">
+                                <li class="flex items-center justify-between">
+                                    <div class="flex items-center">
+                                        <iconify-icon icon="heroicons:play-circle" width="20"
+                                            class="text-indigo-500 mr-2"></iconify-icon>
+                                        <span class="text-gray-700 dark:text-gray-300">Welcome and Course
+                                            Overview</span>
+                                    </div>
+                                    <span class="text-sm text-gray-500 dark:text-gray-400">10:15</span>
+                                </li>
+                                <li class="flex items-center justify-between">
+                                    <div class="flex items-center">
+                                        <iconify-icon icon="heroicons:play-circle" width="20"
+                                            class="text-indigo-500 mr-2"></iconify-icon>
+                                        <span class="text-gray-700 dark:text-gray-300">Setting Up Your Development
+                                            Environment</span>
+                                    </div>
+                                    <span class="text-sm text-gray-500 dark:text-gray-400">15:30</span>
+                                </li>
+                                <li class="flex items-center justify-between">
+                                    <div class="flex items-center">
+                                        <iconify-icon icon="heroicons:play-circle" width="20"
+                                            class="text-indigo-500 mr-2"></iconify-icon>
+                                        <span class="text-gray-700 dark:text-gray-300">HTML Document
+                                            Structure</span>
+                                    </div>
+                                    <span class="text-sm text-gray-500 dark:text-gray-400">19:45</span>
+                                </li>
                             </ul>
                         </div>
 
-                        <!-- Curriculum Tab -->
-                        <div id="curriculum" class="tab-content hidden">
-                            <h3 class="text-xl font-bold mb-4 text-gray-900 dark:text-white">Course Curriculum</h3>
-
-                            <!-- Section 1 -->
-                            <div class="border-b border-gray-200 dark:border-gray-700 pb-4 mb-4">
-                                <div class="flex justify-between items-center mb-2">
-                                    <h4 class="text-lg font-semibold text-gray-900 dark:text-white">1. Introduction to
-                                        HTML</h4>
-                                    <span class="text-sm text-gray-500 dark:text-gray-400">3 lessons (45 min)</span>
-                                </div>
-                                <ul class="space-y-2 pl-4">
-                                    <li class="flex items-center justify-between">
-                                        <div class="flex items-center">
-                                            <iconify-icon icon="heroicons:play-circle" width="20"
-                                                class="text-indigo-500 mr-2"></iconify-icon>
-                                            <span class="text-gray-700 dark:text-gray-300">Welcome and Course
-                                                Overview</span>
-                                        </div>
-                                        <span class="text-sm text-gray-500 dark:text-gray-400">10:15</span>
-                                    </li>
-                                    <li class="flex items-center justify-between">
-                                        <div class="flex items-center">
-                                            <iconify-icon icon="heroicons:play-circle" width="20"
-                                                class="text-indigo-500 mr-2"></iconify-icon>
-                                            <span class="text-gray-700 dark:text-gray-300">Setting Up Your Development
-                                                Environment</span>
-                                        </div>
-                                        <span class="text-sm text-gray-500 dark:text-gray-400">15:30</span>
-                                    </li>
-                                    <li class="flex items-center justify-between">
-                                        <div class="flex items-center">
-                                            <iconify-icon icon="heroicons:play-circle" width="20"
-                                                class="text-indigo-500 mr-2"></iconify-icon>
-                                            <span class="text-gray-700 dark:text-gray-300">HTML Document
-                                                Structure</span>
-                                        </div>
-                                        <span class="text-sm text-gray-500 dark:text-gray-400">19:45</span>
-                                    </li>
-                                </ul>
+                        <!-- Section 2 -->
+                        <div class="border-b border-gray-200 dark:border-gray-700 pb-4 mb-4">
+                            <div class="flex justify-between items-center mb-2">
+                                <h4 class="text-lg font-semibold text-gray-900 dark:text-white">2. HTML Elements and
+                                    Semantics</h4>
+                                <span class="text-sm text-gray-500 dark:text-gray-400">4 lessons (65 min)</span>
                             </div>
-
-                            <!-- Section 2 -->
-                            <div class="border-b border-gray-200 dark:border-gray-700 pb-4 mb-4">
-                                <div class="flex justify-between items-center mb-2">
-                                    <h4 class="text-lg font-semibold text-gray-900 dark:text-white">2. HTML Elements and
-                                        Semantics</h4>
-                                    <span class="text-sm text-gray-500 dark:text-gray-400">4 lessons (65 min)</span>
-                                </div>
-                                <ul class="space-y-2 pl-4">
-                                    <li class="flex items-center justify-between">
-                                        <div class="flex items-center">
-                                            <iconify-icon icon="heroicons:play-circle" width="20"
-                                                class="text-indigo-500 mr-2"></iconify-icon>
-                                            <span class="text-gray-700 dark:text-gray-300">Text Elements and
-                                                Typography</span>
-                                        </div>
-                                        <span class="text-sm text-gray-500 dark:text-gray-400">16:20</span>
-                                    </li>
-                                    <li class="flex items-center justify-between">
-                                        <div class="flex items-center">
-                                            <iconify-icon icon="heroicons:play-circle" width="20"
-                                                class="text-indigo-500 mr-2"></iconify-icon>
-                                            <span class="text-gray-700 dark:text-gray-300">Lists and Tables</span>
-                                        </div>
-                                        <span class="text-sm text-gray-500 dark:text-gray-400">18:45</span>
-                                    </li>
-                                    <li class="flex items-center justify-between">
-                                        <div class="flex items-center">
-                                            <iconify-icon icon="heroicons:play-circle" width="20"
-                                                class="text-indigo-500 mr-2"></iconify-icon>
-                                            <span class="text-gray-700 dark:text-gray-300">Links and Navigation</span>
-                                        </div>
-                                        <span class="text-sm text-gray-500 dark:text-gray-400">15:10</span>
-                                    </li>
-                                    <li class="flex items-center justify-between">
-                                        <div class="flex items-center">
-                                            <iconify-icon icon="heroicons:play-circle" width="20"
-                                                class="text-indigo-500 mr-2"></iconify-icon>
-                                            <span class="text-gray-700 dark:text-gray-300">Semantic HTML Elements</span>
-                                        </div>
-                                        <span class="text-sm text-gray-500 dark:text-gray-400">14:50</span>
-                                    </li>
-                                </ul>
-                            </div>
-
-                            <!-- Section 3 -->
-                            <div class="border-b border-gray-200 dark:border-gray-700 pb-4 mb-4">
-                                <div class="flex justify-between items-center mb-2">
-                                    <h4 class="text-lg font-semibold text-gray-900 dark:text-white">3. Introduction to
-                                        CSS</h4>
-                                    <span class="text-sm text-gray-500 dark:text-gray-400">3 lessons (55 min)</span>
-                                </div>
-                                <ul class="space-y-2 pl-4">
-                                    <li class="flex items-center justify-between">
-                                        <div class="flex items-center">
-                                            <iconify-icon icon="heroicons:play-circle" width="20"
-                                                class="text-indigo-500 mr-2"></iconify-icon>
-                                            <span class="text-gray-700 dark:text-gray-300">CSS Syntax and
-                                                Selectors</span>
-                                        </div>
-                                        <span class="text-sm text-gray-500 dark:text-gray-400">20:15</span>
-                                    </li>
-                                    <li class="flex items-center justify-between">
-                                        <div class="flex items-center">
-                                            <iconify-icon icon="heroicons:play-circle" width="20"
-                                                class="text-indigo-500 mr-2"></iconify-icon>
-                                            <span class="text-gray-700 dark:text-gray-300">Colors, Backgrounds, and
-                                                Borders</span>
-                                        </div>
-                                        <span class="text-sm text-gray-500 dark:text-gray-400">17:30</span>
-                                    </li>
-                                    <li class="flex items-center justify-between">
-                                        <div class="flex items-center">
-                                            <iconify-icon icon="heroicons:play-circle" width="20"
-                                                class="text-indigo-500 mr-2"></iconify-icon>
-                                            <span class="text-gray-700 dark:text-gray-300">Box Model and Layout
-                                                Basics</span>
-                                        </div>
-                                        <span class="text-sm text-gray-500 dark:text-gray-400">17:15</span>
-                                    </li>
-                                </ul>
-                            </div>
-
-                            <!-- More sections can be added as needed -->
+                            <ul class="space-y-2 pl-4">
+                                <li class="flex items-center justify-between">
+                                    <div class="flex items-center">
+                                        <iconify-icon icon="heroicons:play-circle" width="20"
+                                            class="text-indigo-500 mr-2"></iconify-icon>
+                                        <span class="text-gray-700 dark:text-gray-300">Text Elements and
+                                            Typography</span>
+                                    </div>
+                                    <span class="text-sm text-gray-500 dark:text-gray-400">16:20</span>
+                                </li>
+                                <li class="flex items-center justify-between">
+                                    <div class="flex items-center">
+                                        <iconify-icon icon="heroicons:play-circle" width="20"
+                                            class="text-indigo-500 mr-2"></iconify-icon>
+                                        <span class="text-gray-700 dark:text-gray-300">Lists and Tables</span>
+                                    </div>
+                                    <span class="text-sm text-gray-500 dark:text-gray-400">18:45</span>
+                                </li>
+                                <li class="flex items-center justify-between">
+                                    <div class="flex items-center">
+                                        <iconify-icon icon="heroicons:play-circle" width="20"
+                                            class="text-indigo-500 mr-2"></iconify-icon>
+                                        <span class="text-gray-700 dark:text-gray-300">Links and Navigation</span>
+                                    </div>
+                                    <span class="text-sm text-gray-500 dark:text-gray-400">15:10</span>
+                                </li>
+                                <li class="flex items-center justify-between">
+                                    <div class="flex items-center">
+                                        <iconify-icon icon="heroicons:play-circle" width="20"
+                                            class="text-indigo-500 mr-2"></iconify-icon>
+                                        <span class="text-gray-700 dark:text-gray-300">Semantic HTML Elements</span>
+                                    </div>
+                                    <span class="text-sm text-gray-500 dark:text-gray-400">14:50</span>
+                                </li>
+                            </ul>
                         </div>
 
-                        <!-- Instructor Tab -->
-                        <div id="instructor" class="tab-content hidden">
-                            <h3 class="text-xl font-bold mb-4 text-gray-900 dark:text-white">Meet Your Instructor</h3>
-                            <div class="flex items-start space-x-4 mb-6">
-                                <img src="/api/placeholder/150/150" alt="Instructor"
-                                    class="w-20 h-20 rounded-full object-cover">
-                                <div>
-                                    <h4 class="text-lg font-semibold text-gray-900 dark:text-white">Sarah Johnson</h4>
-                                    <p class="text-sm text-gray-500 dark:text-gray-400 mb-2">Web Development Instructor
-                                    </p>
-                                    <div class="flex items-center mb-2">
-                                        <iconify-icon icon="heroicons:star" width="16"
-                                            class="text-yellow-500"></iconify-icon>
-                                        <iconify-icon icon="heroicons:star" width="16"
-                                            class="text-yellow-500"></iconify-icon>
-                                        <iconify-icon icon="heroicons:star" width="16"
-                                            class="text-yellow-500"></iconify-icon>
-                                        <iconify-icon icon="heroicons:star" width="16"
-                                            class="text-yellow-500"></iconify-icon>
-                                        <iconify-icon icon="heroicons:star" width="16"
-                                            class="text-yellow-500"></iconify-icon>
-                                        <span class="text-sm text-gray-500 dark:text-gray-400 ml-2">4.9 Instructor
-                                            Rating</span>
-                                    </div>
-                                    <div class="flex items-center space-x-4 text-sm text-gray-500 dark:text-gray-400">
-                                        <div class="flex items-center">
-                                            <iconify-icon icon="heroicons:user-group" width="16"
-                                                class="mr-1"></iconify-icon>
-                                            <span>45,678 Students</span>
-                                        </div>
-                                        <div class="flex items-center">
-                                            <iconify-icon icon="heroicons:academic-cap" width="16"
-                                                class="mr-1"></iconify-icon>
-                                            <span>12 Courses</span>
-                                        </div>
-                                    </div>
-                                </div>
+                        <!-- Section 3 -->
+                        <div class="border-b border-gray-200 dark:border-gray-700 pb-4 mb-4">
+                            <div class="flex justify-between items-center mb-2">
+                                <h4 class="text-lg font-semibold text-gray-900 dark:text-white">3. Introduction to
+                                    CSS</h4>
+                                <span class="text-sm text-gray-500 dark:text-gray-400">3 lessons (55 min)</span>
                             </div>
-                            <p class="text-gray-700 dark:text-gray-300 mb-4">
-                                Sarah Johnson is a full-stack web developer with over 10 years of experience in the
-                                industry.
-                                She specializes in front-end development and has worked with major tech companies before
-                                becoming
-                                a full-time educator.
-                            </p>
-                            <p class="text-gray-700 dark:text-gray-300 mb-4">
-                                Sarah is passionate about making web development accessible to everyone and has taught
-                                over 45,000
-                                students worldwide. Her teaching style focuses on practical, hands-on learning with
-                                real-world projects.
-                            </p>
-                            <p class="text-gray-700 dark:text-gray-300">
-                                When not teaching, Sarah contributes to open-source projects and speaks at web
-                                development conferences
-                                around the world.
-                            </p>
+                            <ul class="space-y-2 pl-4">
+                                <li class="flex items-center justify-between">
+                                    <div class="flex items-center">
+                                        <iconify-icon icon="heroicons:play-circle" width="20"
+                                            class="text-indigo-500 mr-2"></iconify-icon>
+                                        <span class="text-gray-700 dark:text-gray-300">CSS Syntax and
+                                            Selectors</span>
+                                    </div>
+                                    <span class="text-sm text-gray-500 dark:text-gray-400">20:15</span>
+                                </li>
+                                <li class="flex items-center justify-between">
+                                    <div class="flex items-center">
+                                        <iconify-icon icon="heroicons:play-circle" width="20"
+                                            class="text-indigo-500 mr-2"></iconify-icon>
+                                        <span class="text-gray-700 dark:text-gray-300">Colors, Backgrounds, and
+                                            Borders</span>
+                                    </div>
+                                    <span class="text-sm text-gray-500 dark:text-gray-400">17:30</span>
+                                </li>
+                                <li class="flex items-center justify-between">
+                                    <div class="flex items-center">
+                                        <iconify-icon icon="heroicons:play-circle" width="20"
+                                            class="text-indigo-500 mr-2"></iconify-icon>
+                                        <span class="text-gray-700 dark:text-gray-300">Box Model and Layout
+                                            Basics</span>
+                                    </div>
+                                    <span class="text-sm text-gray-500 dark:text-gray-400">17:15</span>
+                                </li>
+                            </ul>
                         </div>
 
-                        <!-- Reviews Tab -->
-                        <div id="reviews" class="tab-content hidden">
-                            <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
-                                <h3 class="text-xl font-bold text-gray-900 dark:text-white">Student Reviews</h3>
-                                <div class="flex items-center mt-2 md:mt-0">
-                                    <div class="flex">
-                                        <iconify-icon icon="heroicons:star" width="20"
-                                            class="text-yellow-500"></iconify-icon>
-                                        <iconify-icon icon="heroicons:star" width="20"
-                                            class="text-yellow-500"></iconify-icon>
-                                        <iconify-icon icon="heroicons:star" width="20"
-                                            class="text-yellow-500"></iconify-icon>
-                                        <iconify-icon icon="heroicons:star" width="20"
-                                            class="text-yellow-500"></iconify-icon>
-                                        <iconify-icon icon="heroicons:star-half" width="20"
-                                            class="text-yellow-500"></iconify-icon>
+                        <!-- More sections can be added as needed -->
+                    </div>
+
+                    <!-- Instructor Tab -->
+                    <div id="instructor" class="tab-content hidden">
+                        <h3 class="text-xl font-bold mb-4 text-gray-900 dark:text-white">Meet Your Instructor</h3>
+                        <div class="flex items-start space-x-4 mb-6">
+                            <img src="/api/placeholder/150/150" alt="Instructor"
+                                class="w-20 h-20 rounded-full object-cover">
+                            <div>
+                                <h4 class="text-lg font-semibold text-gray-900 dark:text-white">Sarah Johnson</h4>
+                                <p class="text-sm text-gray-500 dark:text-gray-400 mb-2">Web Development Instructor
+                                </p>
+                                <div class="flex items-center mb-2">
+                                    <iconify-icon icon="heroicons:star" width="16"
+                                        class="text-yellow-500"></iconify-icon>
+                                    <iconify-icon icon="heroicons:star" width="16"
+                                        class="text-yellow-500"></iconify-icon>
+                                    <iconify-icon icon="heroicons:star" width="16"
+                                        class="text-yellow-500"></iconify-icon>
+                                    <iconify-icon icon="heroicons:star" width="16"
+                                        class="text-yellow-500"></iconify-icon>
+                                    <iconify-icon icon="heroicons:star" width="16"
+                                        class="text-yellow-500"></iconify-icon>
+                                    <span class="text-sm text-gray-500 dark:text-gray-400 ml-2">4.9 Instructor
+                                        Rating</span>
+                                </div>
+                                <div class="flex items-center space-x-4 text-sm text-gray-500 dark:text-gray-400">
+                                    <div class="flex items-center">
+                                        <iconify-icon icon="heroicons:user-group" width="16"
+                                            class="mr-1"></iconify-icon>
+                                        <span>45,678 Students</span>
                                     </div>
-                                    <span class="ml-2 text-gray-700 dark:text-gray-300">4.8 out of 5 (234
-                                        reviews)</span>
+                                    <div class="flex items-center">
+                                        <iconify-icon icon="heroicons:academic-cap" width="16"
+                                            class="mr-1"></iconify-icon>
+                                        <span>12 Courses</span>
+                                    </div>
                                 </div>
                             </div>
+                        </div>
+                        <p class="text-gray-700 dark:text-gray-300 mb-4">
+                            Sarah Johnson is a full-stack web developer with over 10 years of experience in the
+                            industry.
+                            She specializes in front-end development and has worked with major tech companies before
+                            becoming
+                            a full-time educator.
+                        </p>
+                        <p class="text-gray-700 dark:text-gray-300 mb-4">
+                            Sarah is passionate about making web development accessible to everyone and has taught
+                            over 45,000
+                            students worldwide. Her teaching style focuses on practical, hands-on learning with
+                            real-world projects.
+                        </p>
+                        <p class="text-gray-700 dark:text-gray-300">
+                            When not teaching, Sarah contributes to open-source projects and speaks at web
+                            development conferences
+                            around the world.
+                        </p>
+                    </div>
 
-                            <!-- Review Filters -->
-                            <div class="flex flex-wrap gap-2 mb-6">
-                                <button
-                                    class="px-3 py-1 text-sm bg-indigo-100 text-indigo-700 rounded-full hover:bg-indigo-200">All
-                                    Reviews</button>
-                                <button
-                                    class="px-3 py-1 text-sm bg-gray-100 text-gray-700 dark:bg-gray-700 dark:text-gray-300 rounded-full hover:bg-gray-200 dark:hover:bg-gray-600">5
-                                    Stars (185)</button>
-                                <button
-                                    class="px-3 py-1 text-sm bg-gray-100 text-gray-700 dark:bg-gray-700 dark:text-gray-300 rounded-full hover:bg-gray-200 dark:hover:bg-gray-600">4
-                                    Stars (42)</button>
-                                <button
-                                    class="px-3 py-1 text-sm bg-gray-100 text-gray-700 dark:bg-gray-700 dark:text-gray-300 rounded-full hover:bg-gray-200 dark:hover:bg-gray-600">3
-                                    Stars (5)</button>
-                                <button
-                                    class="px-3 py-1 text-sm bg-gray-100 text-gray-700 dark:bg-gray-700 dark:text-gray-300 rounded-full hover:bg-gray-200 dark:hover:bg-gray-600">2
-                                    Stars (1)</button>
-                                <button
-                                    class="px-3 py-1 text-sm bg-gray-100 text-gray-700 dark:bg-gray-700 dark:text-gray-300 rounded-full hover:bg-gray-200 dark:hover:bg-gray-600">1
-                                    Star (1)</button>
+                    <!-- Reviews Tab -->
+                    <div id="reviews" class="tab-content hidden">
+                        <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
+                            <h3 class="text-xl font-bold text-gray-900 dark:text-white">Student Reviews</h3>
+                            <div class="flex items-center mt-2 md:mt-0">
+                                <div class="flex">
+                                    <iconify-icon icon="heroicons:star" width="20"
+                                        class="text-yellow-500"></iconify-icon>
+                                    <iconify-icon icon="heroicons:star" width="20"
+                                        class="text-yellow-500"></iconify-icon>
+                                    <iconify-icon icon="heroicons:star" width="20"
+                                        class="text-yellow-500"></iconify-icon>
+                                    <iconify-icon icon="heroicons:star" width="20"
+                                        class="text-yellow-500"></iconify-icon>
+                                    <iconify-icon icon="heroicons:star-half" width="20"
+                                        class="text-yellow-500"></iconify-icon>
+                                </div>
+                                <span class="ml-2 text-gray-700 dark:text-gray-300">4.8 out of 5 (234
+                                    reviews)</span>
+                            </div>
+                        </div>
+
+                        <!-- Review Filters -->
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <button
+                                class="px-3 py-1 text-sm bg-indigo-100 text-indigo-700 rounded-full hover:bg-indigo-200">All
+                                Reviews</button>
+                            <button
+                                class="px-3 py-1 text-sm bg-gray-100 text-gray-700 dark:bg-gray-700 dark:text-gray-300 rounded-full hover:bg-gray-200 dark:hover:bg-gray-600">5
+                                Stars (185)</button>
+                            <button
+                                class="px-3 py-1 text-sm bg-gray-100 text-gray-700 dark:bg-gray-700 dark:text-gray-300 rounded-full hover:bg-gray-200 dark:hover:bg-gray-600">4
+                                Stars (42)</button>
+                            <button
+                                class="px-3 py-1 text-sm bg-gray-100 text-gray-700 dark:bg-gray-700 dark:text-gray-300 rounded-full hover:bg-gray-200 dark:hover:bg-gray-600">3
+                                Stars (5)</button>
+                            <button
+                                class="px-3 py-1 text-sm bg-gray-100 text-gray-700 dark:bg-gray-700 dark:text-gray-300 rounded-full hover:bg-gray-200 dark:hover:bg-gray-600">2
+                                Stars (1)</button>
+                            <button
+                                class="px-3 py-1 text-sm bg-gray-100 text-gray-700 dark:bg-gray-700 dark:text-gray-300 rounded-full hover:bg-gray-200 dark:hover:bg-gray-600">1
+                                Star (1)</button>
+                        </div>
+
+                        <!-- Individual Reviews -->
+                        <div class="space-y-6">
+                            <!-- Review 1 -->
+                            <div class="border-b border-gray-200 dark:border-gray-700 pb-6">
+                                <div class="flex items-center mb-2">
+                                    <img src="/api/placeholder/40/40" alt="Reviewer"
+                                        class="w-10 h-10 rounded-full mr-3">
+                                    <div>
+                                        <h4 class="font-medium text-gray-900 dark:text-white">Michael P.</h4>
+                                        <div class="flex items-center">
+                                            <div class="flex">
+                                                <iconify-icon icon="heroicons:star" width="16"
+                                                    class="text-yellow-500"></iconify-icon>
+                                                <iconify-icon icon="heroicons:star" width="16"
+                                                    class="text-yellow-500"></iconify-icon>
+                                                <iconify-icon icon="heroicons:star" width="16"
+                                                    class="text-yellow-500"></iconify-icon>
+                                                <iconify-icon icon="heroicons:star" width="16"
+                                                    class="text-yellow-500"></iconify-icon>
+                                                <iconify-icon icon="heroicons:star" width="16"
+                                                    class="text-yellow-500"></iconify-icon>
+                                            </div>
+                                            <span class="ml-2 text-sm text-gray-500 dark:text-gray-400">2 weeks
+                                                ago</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="text-gray-700 dark:text-gray-300">
+                                    This course exceeded my expectations! As a complete beginner, I was worried it
+                                    might be too technical,
+                                    but Sarah breaks everything down in such an approachable way. I've already built
+                                    my first website
+                                    following along with the projects. Highly recommended for anyone starting their
+                                    web development journey.
+                                </p>
                             </div>
 
-                            <!-- Individual Reviews -->
-                            <div class="space-y-6">
-                                <!-- Review 1 -->
-                                <div class="border-b border-gray-200 dark:border-gray-700 pb-6">
-                                    <div class="flex items-center mb-2">
-                                        <img src="/api/placeholder/40/40" alt="Reviewer"
-                                            class="w-10 h-10 rounded-full mr-3">
-                                        <div>
-                                            <h4 class="font-medium text-gray-900 dark:text-white">Michael P.</h4>
-                                            <div class="flex items-center">
-                                                <div class="flex">
-                                                    <iconify-icon icon="heroicons:star" width="16"
-                                                        class="text-yellow-500"></iconify-icon>
-                                                    <iconify-icon icon="heroicons:star" width="16"
-                                                        class="text-yellow-500"></iconify-icon>
-                                                    <iconify-icon icon="heroicons:star" width="16"
-                                                        class="text-yellow-500"></iconify-icon>
-                                                    <iconify-icon icon="heroicons:star" width="16"
-                                                        class="text-yellow-500"></iconify-icon>
-                                                    <iconify-icon icon="heroicons:star" width="16"
-                                                        class="text-yellow-500"></iconify-icon>
-                                                </div>
-                                                <span class="ml-2 text-sm text-gray-500 dark:text-gray-400">2 weeks
-                                                    ago</span>
+                            <!-- Review 2 -->
+                            <div class="border-b border-gray-200 dark:border-gray-700 pb-6">
+                                <div class="flex items-center mb-2">
+                                    <img src="/api/placeholder/40/40" alt="Reviewer"
+                                        class="w-10 h-10 rounded-full mr-3">
+                                    <div>
+                                        <h4 class="font-medium text-gray-900 dark:text-white">Jessica T.</h4>
+                                        <div class="flex items-center">
+                                            <div class="flex">
+                                                <iconify-icon icon="heroicons:star" width="16"
+                                                    class="text-yellow-500"></iconify-icon>
+                                                <iconify-icon icon="heroicons:star" width="16"
+                                                    class="text-yellow-500"></iconify-icon>
+                                                <iconify-icon icon="heroicons:star" width="16"
+                                                    class="text-yellow-500"></iconify-icon>
+                                                <iconify-icon icon="heroicons:star" width="16"
+                                                    class="text-yellow-500"></iconify-icon>
+                                                <iconify-icon icon="heroicons:star" width="16"
+                                                    class="text-yellow-500"></iconify-icon>
                                             </div>
+                                            <span class="ml-2 text-sm text-gray-500 dark:text-gray-400">1 month
+                                                ago</span>
                                         </div>
                                     </div>
-                                    <p class="text-gray-700 dark:text-gray-300">
-                                        This course exceeded my expectations! As a complete beginner, I was worried it
-                                        might be too technical,
-                                        but Sarah breaks everything down in such an approachable way. I've already built
-                                        my first website
-                                        following along with the projects. Highly recommended for anyone starting their
-                                        web development journey.
-                                    </p>
                                 </div>
+                                <p class="text-gray-700 dark:text-gray-300">
+                                    I've tried several HTML and CSS courses before, but this one finally made
+                                    everything click for me.
+                                    The section on responsive design was particularly helpful. Sarah's explanations
+                                    are clear and the
+                                    projects are practical and modern. I feel much more confident in my skills now.
+                                </p>
+                            </div>
 
-                                <!-- Review 2 -->
-                                <div class="border-b border-gray-200 dark:border-gray-700 pb-6">
-                                    <div class="flex items-center mb-2">
-                                        <img src="/api/placeholder/40/40" alt="Reviewer"
-                                            class="w-10 h-10 rounded-full mr-3">
-                                        <div>
-                                            <h4 class="font-medium text-gray-900 dark:text-white">Jessica T.</h4>
-                                            <div class="flex items-center">
-                                                <div class="flex">
-                                                    <iconify-icon icon="heroicons:star" width="16"
-                                                        class="text-yellow-500"></iconify-icon>
-                                                    <iconify-icon icon="heroicons:star" width="16"
-                                                        class="text-yellow-500"></iconify-icon>
-                                                    <iconify-icon icon="heroicons:star" width="16"
-                                                        class="text-yellow-500"></iconify-icon>
-                                                    <iconify-icon icon="heroicons:star" width="16"
-                                                        class="text-yellow-500"></iconify-icon>
-                                                    <iconify-icon icon="heroicons:star" width="16"
-                                                        class="text-yellow-500"></iconify-icon>
-                                                </div>
-                                                <span class="ml-2 text-sm text-gray-500 dark:text-gray-400">1 month
-                                                    ago</span>
+                            <!-- Review 3 -->
+                            <div class="border-b border-gray-200 dark:border-gray-700 pb-6">
+                                <div class="flex items-center mb-2">
+                                    <img src="/api/placeholder/40/40" alt="Reviewer"
+                                        class="w-10 h-10 rounded-full mr-3">
+                                    <div>
+                                        <h4 class="font-medium text-gray-900 dark:text-white">David K.</h4>
+                                        <div class="flex items-center">
+                                            <div class="flex">
+                                                <iconify-icon icon="heroicons:star" width="16"
+                                                    class="text-yellow-500"></iconify-icon>
+                                                <iconify-icon icon="heroicons:star" width="16"
+                                                    class="text-yellow-500"></iconify-icon>
+                                                <iconify-icon icon="heroicons:star" width="16"
+                                                    class="text-yellow-500"></iconify-icon>
+                                                <iconify-icon icon="heroicons:star" width="16"
+                                                    class="text-yellow-500"></iconify-icon>
+                                                <iconify-icon icon="heroicons:star-empty" width="16"
+                                                    class="text-gray-300"></iconify-icon>
                                             </div>
+                                            <span class="ml-2 text-sm text-gray-500 dark:text-gray-400">2 months
+                                                ago</span>
                                         </div>
                                     </div>
-                                    <p class="text-gray-700 dark:text-gray-300">
-                                        I've tried several HTML and CSS courses before, but this one finally made
-                                        everything click for me.
-                                        The section on responsive design was particularly helpful. Sarah's explanations
-                                        are clear and the
-                                        projects are practical and modern. I feel much more confident in my skills now.
-                                    </p>
                                 </div>
+                                <p class="text-gray-700 dark:text-gray-300">
+                                    Great course overall. The content is well-structured and easy to follow. The
+                                    only reason I'm giving
+                                    4 stars instead of 5 is that I wish there were more advanced exercises at the
+                                    end of each section.
+                                    Still, I learned a lot and would recommend this to anyone starting out.
+                                </p>
+                            </div>
 
-                                <!-- Review 3 -->
-                                <div class="border-b border-gray-200 dark:border-gray-700 pb-6">
-                                    <div class="flex items-center mb-2">
-                                        <img src="/api/placeholder/40/40" alt="Reviewer"
-                                            class="w-10 h-10 rounded-full mr-3">
-                                        <div>
-                                            <h4 class="font-medium text-gray-900 dark:text-white">David K.</h4>
-                                            <div class="flex items-center">
-                                                <div class="flex">
-                                                    <iconify-icon icon="heroicons:star" width="16"
-                                                        class="text-yellow-500"></iconify-icon>
-                                                    <iconify-icon icon="heroicons:star" width="16"
-                                                        class="text-yellow-500"></iconify-icon>
-                                                    <iconify-icon icon="heroicons:star" width="16"
-                                                        class="text-yellow-500"></iconify-icon>
-                                                    <iconify-icon icon="heroicons:star" width="16"
-                                                        class="text-yellow-500"></iconify-icon>
-                                                    <iconify-icon icon="heroicons:star-empty" width="16"
-                                                        class="text-gray-300"></iconify-icon>
-                                                </div>
-                                                <span class="ml-2 text-sm text-gray-500 dark:text-gray-400">2 months
-                                                    ago</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <p class="text-gray-700 dark:text-gray-300">
-                                        Great course overall. The content is well-structured and easy to follow. The
-                                        only reason I'm giving
-                                        4 stars instead of 5 is that I wish there were more advanced exercises at the
-                                        end of each section.
-                                        Still, I learned a lot and would recommend this to anyone starting out.
-                                    </p>
-                                </div>
-
-                                <!-- Load More Reviews Button -->
-                                <div class="text-center">
-                                    <button
-                                        class="px-4 py-2 bg-indigo-100 text-indigo-700 rounded-md hover:bg-indigo-200 focus:outline-none focus:ring-2 focus:ring-indigo-500">
-                                        Load More Reviews
-                                    </button>
-                                </div>
+                            <!-- Load More Reviews Button -->
+                            <div class="text-center">
+                                <button
+                                    class="px-4 py-2 bg-indigo-100 text-indigo-700 rounded-md hover:bg-indigo-200 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                                    Load More Reviews
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -483,12 +470,6 @@
             </div>
         </div>
     </div>
+</div>
 
-    <!-- Footer -->
-    {% include 'footer.html' %}
-
-    <!-- Javascript -->
-    <script src="/static/js/main.js"></script>
-</body>
-
-</html>
+{% endblock %}

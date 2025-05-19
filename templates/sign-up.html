@@ -1,24 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'layout.html' %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up - LearnHub</title>
-    <!-- Use compiled CSS instead of CDN -->
-    <link rel="stylesheet" href="/static/css/style.css">
-    <!-- Iconify for icons -->
-    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
-    <!-- Firebase App (the core SDK) -->
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-    <!-- Firebase Authentication -->
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-</head>
+{% block title %}<title>Sign Up - LearnHub</title>{% endblock %}
+{% block firebase %}{% endblock %}
 
-<body class="bg-gray-50 dark:bg-gray-900 font-sans text-gray-900 dark:text-gray-100 transition-colors duration-200">
-    <!-- Navigation -->
-    {% include 'nav.html' %}
+{% block body %}
 
     <!-- Sign Up Section -->
     <section class="py-16">
@@ -99,11 +84,4 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    {% include 'footer.html' %}
-
-    <!-- Javascript -->
-    <script src="/static/js/main.js"></script>
-</body>
-
-</html>
+{% endblock %}

@@ -1,493 +1,482 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'layout.html' %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Courses - ExpertEdge</title>
-    <!-- Use compiled CSS instead of CDN -->
-    <link rel="stylesheet" href="/static/css/style.css">
-    <!-- Iconify for icons -->
-    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-</head>
+{% block title %}<title>Courses - ExpertEdge</title>{% endblock %}
 
-<body class="bg-gray-50 dark:bg-gray-900 font-sans text-gray-900 dark:text-gray-100 transition-colors duration-200">
+{% block body %}
 
-    <!-- Navigation -->
-    {% include 'nav.html' %}
-
-    <!-- Page Header -->
-    <div class="bg-white dark:bg-gray-800 shadow-sm inline-flex justify-center w-full">
-        <div class="max-w-7xl py-8 text-center">
-            <div>
-                <h1 class="text-3xl font-bold text-gray-900 dark:text-white">Explore Courses</h1>
-                <p class="mt-2 text-lg text-gray-600 dark:text-gray-300">Discover the best free educational
-                    resources from around the web</p>
-                <div class="flex flex-col sm:flex-row gap-4 mt-5">
-                    <div class="relative flex-1 bg-gray-100 dark:bg-gray-700 rounded-full">
-                        <input id="course-search" type="text" placeholder="Search courses..."
-                            class="w-full px-4 py-3 rounded-full text-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400 absolute right-3 top-3.5"
-                            fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                        </svg>
-                    </div>
+<!-- Page Header -->
+<div class="bg-white dark:bg-gray-800 shadow-sm inline-flex justify-center w-full">
+    <div class="max-w-7xl py-8 text-center">
+        <div>
+            <h1 class="text-3xl font-bold text-gray-900 dark:text-white">Explore Courses</h1>
+            <p class="mt-2 text-lg text-gray-600 dark:text-gray-300">Discover the best free educational
+                resources from around the web</p>
+            <div class="flex flex-col sm:flex-row gap-4 mt-5">
+                <div class="relative flex-1 bg-gray-100 dark:bg-gray-700 rounded-full">
+                    <input id="course-search" type="text" placeholder="Search courses..."
+                        class="w-full px-4 py-3 rounded-full text-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400 absolute right-3 top-3.5"
+                        fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
-    <!-- Course Filters and Grid -->
-    <section class="py-12">
-        <div class="container mx-auto px-4">
-            <div class="flex flex-col lg:flex-row gap-8">
-                <!-- Filters Sidebar -->
-                <div class="lg:w-1/4">
-                    <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm mb-6">
-                        <h2 class="text-xl font-bold mb-4">Categories</h2>
-                        <div class="space-y-2">
-                            <label class="flex items-center cursor-pointer">
-                                <input type="checkbox" class="rounded text-primary focus:ring-primary"
-                                    data-category="web-dev">
-                                <span class="ml-2">Web Development</span>
-                            </label>
-                            <label class="flex items-center cursor-pointer">
-                                <input type="checkbox" class="rounded text-primary focus:ring-primary"
-                                    data-category="data-science">
-                                <span class="ml-2">Data Science</span>
-                            </label>
-                            <label class="flex items-center cursor-pointer">
-                                <input type="checkbox" class="rounded text-primary focus:ring-primary"
-                                    data-category="mobile-dev">
-                                <span class="ml-2">Mobile Development</span>
-                            </label>
-                            <label class="flex items-center cursor-pointer">
-                                <input type="checkbox" class="rounded text-primary focus:ring-primary"
-                                    data-category="ui-ux">
-                                <span class="ml-2">UI/UX Design</span>
-                            </label>
-                            <label class="flex items-center cursor-pointer">
-                                <input type="checkbox" class="rounded text-primary focus:ring-primary"
-                                    data-category="business">
-                                <span class="ml-2">Business & Marketing</span>
-                            </label>
+<!-- Course Filters and Grid -->
+<section class="py-12">
+    <div class="container mx-auto px-4">
+        <div class="flex flex-col lg:flex-row gap-8">
+            <!-- Filters Sidebar -->
+            <div class="lg:w-1/4">
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm mb-6">
+                    <h2 class="text-xl font-bold mb-4">Categories</h2>
+                    <div class="space-y-2">
+                        <label class="flex items-center cursor-pointer">
+                            <input type="checkbox" class="rounded text-primary focus:ring-primary"
+                                data-category="web-dev">
+                            <span class="ml-2">Web Development</span>
+                        </label>
+                        <label class="flex items-center cursor-pointer">
+                            <input type="checkbox" class="rounded text-primary focus:ring-primary"
+                                data-category="data-science">
+                            <span class="ml-2">Data Science</span>
+                        </label>
+                        <label class="flex items-center cursor-pointer">
+                            <input type="checkbox" class="rounded text-primary focus:ring-primary"
+                                data-category="mobile-dev">
+                            <span class="ml-2">Mobile Development</span>
+                        </label>
+                        <label class="flex items-center cursor-pointer">
+                            <input type="checkbox" class="rounded text-primary focus:ring-primary"
+                                data-category="ui-ux">
+                            <span class="ml-2">UI/UX Design</span>
+                        </label>
+                        <label class="flex items-center cursor-pointer">
+                            <input type="checkbox" class="rounded text-primary focus:ring-primary"
+                                data-category="business">
+                            <span class="ml-2">Business & Marketing</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm mb-6">
+                    <h2 class="text-xl font-bold mb-4">Skill Level</h2>
+                    <div class="space-y-2">
+                        <label class="flex items-center cursor-pointer">
+                            <input type="checkbox" class="rounded text-primary focus:ring-primary"
+                                data-level="beginner">
+                            <span class="ml-2">Beginner</span>
+                        </label>
+                        <label class="flex items-center cursor-pointer">
+                            <input type="checkbox" class="rounded text-primary focus:ring-primary"
+                                data-level="intermediate">
+                            <span class="ml-2">Intermediate</span>
+                        </label>
+                        <label class="flex items-center cursor-pointer">
+                            <input type="checkbox" class="rounded text-primary focus:ring-primary"
+                                data-level="advanced">
+                            <span class="ml-2">Advanced</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm">
+                    <h2 class="text-xl font-bold mb-4">Duration</h2>
+                    <div class="space-y-2">
+                        <label class="flex items-center cursor-pointer">
+                            <input type="checkbox" class="rounded text-primary focus:ring-primary"
+                                data-duration="short">
+                            <span class="ml-2">
+                                2 Hours</span>
+                        </label>
+                        <label class="flex items-center cursor-pointer">
+                            <input type="checkbox" class="rounded text-primary focus:ring-primary"
+                                data-duration="medium">
+                            <span class="ml-2">2-5 Hours</span>
+                        </label>
+                        <label class="flex items-center cursor-pointer">
+                            <input type="checkbox" class="rounded text-primary focus:ring-primary" data-duration="long">
+                            <span class="ml-2">5+ Hours</span>
+                        </label>
+                    </div>
+                </div>
+
+                <button id="reset-filters"
+                    class="mt-4 w-full bg-gray-200 dark:bg-gray-800 dark:text-white text-gray-700 py-2 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-700 transition duration-300">
+                    Reset Filters
+                </button>
+            </div>
+
+            <!-- Course Grid -->
+            <div class="lg:w-3/4">
+                <div class="flex justify-between items-center mb-6">
+                    <h2 class="text-2xl font-bold">Available Courses (<span id="course-count">12</span>)</h2>
+                    <select id="sort-by"
+                        class="bg-white dark:bg-gray-800 border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary">
+                        <option value="popular">Most Popular</option>
+                        <option value="newest">Newest</option>
+                        <option value="az">A-Z</option>
+                        <option value="za">Z-A</option>
+                    </select>
+                </div>
+
+                <!-- Courses Section -->
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Course 1 -->
+                    <div class="course-card bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm hover:shadow-md"
+                        data-category="web-dev" data-level="beginner" data-duration="medium">
+                        <img src="https://i.ytimg.com/vi/zJSY8tbf_ys/hq720.jpg?sqp=-oaymwEnCNAFEJQDSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLC7nYCbagVW04a3ejzgIGymHk0ruQ"
+                            alt="Course" class="w-full h-40 object-cover">
+                        <div class="p-5">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="bg-primary-light text-primary text-xs px-2 py-1 rounded-full">Web
+                                    Development</span>
+                                <span class="text-sm text-gray-500">4.2 Hours</span>
+                            </div>
+                            <h3 class="text-lg font-bold mb-2">HTML & CSS Fundamentals</h3>
+                            <p class="text-gray-600 mb-4 dark:text-gray-300">Learn the basics of HTML and CSS to create
+                                responsive
+                                websites from scratch.</p>
+                            <div class="flex justify-between items-center">
+                                <div class="flex items-center">
+                                    <span
+                                        class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full">Beginner</span>
+                                </div>
+                                <a href="{{ url_for('course_detail') }}"
+                                    class="text-primary hover:text-primary-dark font-medium">Start Learning
+                                    →</a>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm mb-6">
-                        <h2 class="text-xl font-bold mb-4">Skill Level</h2>
-                        <div class="space-y-2">
-                            <label class="flex items-center cursor-pointer">
-                                <input type="checkbox" class="rounded text-primary focus:ring-primary"
-                                    data-level="beginner">
-                                <span class="ml-2">Beginner</span>
-                            </label>
-                            <label class="flex items-center cursor-pointer">
-                                <input type="checkbox" class="rounded text-primary focus:ring-primary"
-                                    data-level="intermediate">
-                                <span class="ml-2">Intermediate</span>
-                            </label>
-                            <label class="flex items-center cursor-pointer">
-                                <input type="checkbox" class="rounded text-primary focus:ring-primary"
-                                    data-level="advanced">
-                                <span class="ml-2">Advanced</span>
-                            </label>
+                    <!-- Course 2 -->
+                    <div class="course-card bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition duration-300"
+                        data-category="web-dev" data-level="intermediate" data-duration="medium">
+                        <img src="https://i.ytimg.com/vi/876aSEUA_8c/hq720.jpg?sqp=-…BACGAY4AUAB&rs=AOn4CLAeLQy9bV1mLiLBZHy0yhQ23KASCA"
+                            alt="Course" class="w-full h-40 object-cover">
+                        <div class="p-5">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="bg-primary-light text-primary text-xs px-2 py-1 rounded-full">Web
+                                    Development</span>
+                                <span class="text-sm text-gray-500">5 Hours</span>
+                            </div>
+                            <h3 class="text-lg font-bold mb-2">JavaScript Essentials</h3>
+                            <p class="text-gray-600 mb-4 dark:text-gray-300">Master the fundamentals of JavaScript
+                                programming and DOM
+                                manipulation.</p>
+                            <div class="flex justify-between items-center">
+                                <div class="flex items-center">
+                                    <span
+                                        class="bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded-full">Intermediate</span>
+                                </div>
+                                <a href="{{ url_for('course_detail') }}"
+                                    class="text-primary hover:text-primary-dark font-medium">Start Learning
+                                    →</a>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm">
-                        <h2 class="text-xl font-bold mb-4">Duration</h2>
-                        <div class="space-y-2">
-                            <label class="flex items-center cursor-pointer">
-                                <input type="checkbox" class="rounded text-primary focus:ring-primary"
-                                    data-duration="short">
-                                <span class="ml-2">
-                                    2 Hours</span>
-                            </label>
-                            <label class="flex items-center cursor-pointer">
-                                <input type="checkbox" class="rounded text-primary focus:ring-primary"
-                                    data-duration="medium">
-                                <span class="ml-2">2-5 Hours</span>
-                            </label>
-                            <label class="flex items-center cursor-pointer">
-                                <input type="checkbox" class="rounded text-primary focus:ring-primary"
-                                    data-duration="long">
-                                <span class="ml-2">5+ Hours</span>
-                            </label>
+                    <!-- Course 3 -->
+                    <div class="course-card bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition duration-300"
+                        data-category="web-dev" data-level="advanced" data-duration="long">
+                        <img src="	https://i.ytimg.com/vi/EwzWg-Joxq0/hq720.jpg?sqp=-…AFwAcABBg==&rs=AOn4CLAF6Q8N-dWbO1UAtXlZkSo9oGQemw"
+                            alt="Course" class="w-full h-40 object-cover">
+                        <div class="p-5">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="bg-primary-light text-primary text-xs px-2 py-1 rounded-full">Web
+                                    Development</span>
+                                <span class="text-sm text-gray-500">8 Hours</span>
+                            </div>
+                            <h3 class="text-lg font-bold mb-2">Modern React Development</h3>
+                            <p class="text-gray-600 mb-4 dark:text-gray-300">Build powerful web applications with React,
+                                Hooks, and
+                                Context API.</p>
+                            <div class="flex justify-between items-center">
+                                <div class="flex items-center">
+                                    <span class="bg-red-100 text-red-800 text-xs px-2 py-1 rounded-full">Advanced</span>
+                                </div>
+                                <a href="{{ url_for('course_detail') }}"
+                                    class="text-primary hover:text-primary-dark font-medium">Start Learning
+                                    →</a>
+                            </div>
                         </div>
                     </div>
 
-                    <button id="reset-filters"
-                        class="mt-4 w-full bg-gray-200 dark:bg-gray-800 dark:text-white text-gray-700 py-2 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-700 transition duration-300">
-                        Reset Filters
+                    <!-- Course 4 -->
+                    <div class="course-card bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition duration-300"
+                        data-category="data-science" data-level="beginner" data-duration="medium">
+                        <img src="https://i.ytimg.com/vi/r-uOLxNrNk8/hq720.jpg?sqp=-…AFwAcABBg==&rs=AOn4CLCLUeg_531pApSar51eX72QVFqYLg"
+                            alt="Course" class="w-full h-40 object-cover">
+                        <div class="p-5">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="bg-primary-light text-primary text-xs px-2 py-1 rounded-full">Data
+                                    Science</span>
+                                <span class="text-sm text-gray-500">3.5 Hours</span>
+                            </div>
+                            <h3 class="text-lg font-bold mb-2">Python for Data Analysis</h3>
+                            <p class="text-gray-600 mb-4 dark:text-gray-300">Learn how to use Python for data analysis,
+                                visualization,
+                                and insights.</p>
+                            <div class="flex justify-between items-center">
+                                <div class="flex items-center">
+                                    <span
+                                        class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full">Beginner</span>
+                                </div>
+                                <a href="{{ url_for('course_detail') }}"
+                                    class="text-primary hover:text-primary-dark font-medium">Start Learning
+                                    →</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Course 5 -->
+                    <div class="course-card bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition duration-300"
+                        data-category="data-science" data-level="intermediate" data-duration="long">
+                        <img src="https://i.ytimg.com/vi/i_LwzRVP7bg/hq720.jpg?sqp=-…AFwAcABBg==&rs=AOn4CLBP2UV9ostI2w6OAfjVSUqiIHi3YQ"
+                            alt="Course" class="w-full h-40 object-cover">
+                        <div class="p-5">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="bg-primary-light text-primary text-xs px-2 py-1 rounded-full">Data
+                                    Science</span>
+                                <span class="text-sm text-gray-500">6.5 Hours</span>
+                            </div>
+                            <h3 class="text-lg font-bold mb-2">Machine Learning Fundamentals</h3>
+                            <p class="text-gray-600 mb-4 dark:text-gray-300">Understand the core concepts of ML
+                                algorithms and
+                                implementation.</p>
+                            <div class="flex justify-between items-center">
+                                <div class="flex items-center">
+                                    <span
+                                        class="bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded-full">Intermediate</span>
+                                </div>
+                                <a href="{{ url_for('course_detail') }}"
+                                    class="text-primary hover:text-primary-dark font-medium">Start Learning
+                                    →</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Course 6 -->
+                    <div class="course-card bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition duration-300"
+                        data-category="mobile-dev" data-level="intermediate" data-duration="medium">
+                        <img src="https://i.ytimg.com/vi/KCgYDCKqato/hq720.jpg?sqp=-…AFwAcABBg==&rs=AOn4CLBf8hNqBP3krZtrT4SpwER8mxvDTA"
+                            alt="Course" class="w-full h-40 object-cover">
+                        <div class="p-5">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="bg-primary-light text-primary text-xs px-2 py-1 rounded-full">Mobile
+                                    Development</span>
+                                <span class="text-sm text-gray-500">5 Hours</span>
+                            </div>
+                            <h3 class="text-lg font-bold mb-2">Building iOS Apps with Swift</h3>
+                            <p class="text-gray-6ail.html00 mb-4 dark:text-gray-300">Create your first iOS application
+                                using Swift and
+                                SwiftUI
+                                framework.</p>
+                            <div class="flex justify-between items-center">
+                                <div class="flex items-center">
+                                    <span
+                                        class="bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded-full">Intermediate</span>
+                                </div>
+                                <a href="{{ url_for('course_detail') }}"
+                                    class="text-primary hover:text-primary-dark font-medium">Start Learning
+                                    →</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Course 7 -->
+                    <div class="course-card bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition duration-300"
+                        data-category="mobile-dev" data-level="beginner" data-duration="short">
+                        <img src="https://i.ytimg.com/vi/BxM2DayeOBE/hq720.jpg?sqp=-…AFwAcABBg==&rs=AOn4CLCtfslCq4rH6Z3Ugrlow2akMYcJ5Q"
+                            alt="Course" class="w-full h-40 object-cover">
+                        <div class="p-5">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="bg-primary-light text-primary text-xs px-2 py-1 rounded-full">Mobile
+                                    Development</span>
+                                <span class="text-sm text-gray-500">1.5 Hours</span>
+                            </div>
+                            <h3 class="text-lg font-bold mb-2">Intro to Android Development</h3>
+                            <p class="text-gray-600 mb-4 dark:text-gray-300">Learn the basics of Android app development
+                                with Kotlin.
+                            </p>
+                            <div class="flex justify-between items-center">
+                                <div class="flex items-center">
+                                    <span
+                                        class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full">Beginner</span>
+                                </div>
+                                <a href="{{ url_for('course_detail') }}"
+                                    class="text-primary hover:text-primary-dark font-medium">Start Learning
+                                    →</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Course 8 -->
+                    <div class="course-card bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition duration-300"
+                        data-category="ui-ux" data-level="beginner" data-duration="short">
+                        <img src="https://i.ytimg.com/vi/WylVZzSsavg/hq720.jpg?sqp=-…AFwAcABBg==&rs=AOn4CLCCBwwYGK48wbKEfT63KXfAbO0urA"
+                            alt="Course" class="w-full h-40 object-cover">
+                        <div class="p-5">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="bg-primary-light text-primary text-xs px-2 py-1 rounded-full">UI/UX
+                                    Design</span>
+                                <span class="text-sm text-gray-500">1.8 Hours</span>
+                            </div>
+                            <h3 class="text-lg font-bold mb-2">UI Design Principles</h3>
+                            <p class="text-gray-600 mb-4 dark:text-gray-300">Learn the fundamental principles of
+                                effective user
+                                interface design.</p>
+                            <div class="flex justify-between items-center">
+                                <div class="flex items-center">
+                                    <span
+                                        class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full">Beginner</span>
+                                </div>
+                                <a href="{{ url_for('course_detail') }}"
+                                    class="text-primary hover:text-primary-dark font-medium">Start Learning
+                                    →</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Course 9 -->
+                    <div class="course-card bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition duration-300"
+                        data-category="ui-ux" data-level="intermediate" data-duration="medium">
+                        <img src="https://i.ytimg.com/vi/R7urbI0iqb0/hq720.jpg?sqp=-…AFwAcABBg==&rs=AOn4CLC1GvcXOTqavzjsv-wslL4WXucUNw"
+                            alt="Course" class="w-full h-40 object-cover">
+                        <div class="p-5">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="bg-primary-light text-primary text-xs px-2 py-1 rounded-full">UI/UX
+                                    Design</span>
+                                <span class="text-sm text-gray-500">4 Hours</span>
+                            </div>
+                            <h3 class="text-lg font-bold mb-2">User Experience Research</h3>
+                            <p class="text-gray-600 mb-4 dark:text-gray-300">Master UX research methods to create
+                                user-centered
+                                designs.</p>
+                            <div class="flex justify-between items-center">
+                                <div class="flex items-center">
+                                    <span
+                                        class="bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded-full">Intermediate</span>
+                                </div>
+                                <a href="{{ url_for('course_detail') }}"
+                                    class="text-primary hover:text-primary-dark font-medium">Start Learning
+                                    →</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Course 10 -->
+                    <div class="course-card bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition duration-300"
+                        data-category="business" data-level="beginner" data-duration="short">
+                        <img src="https://i.ytimg.com/vi/kunkYTKFNtI/hq720.jpg?sqp=-…AFwAcABBg==&rs=AOn4CLBtpJPvFZUN2ghJMhRNShMmPXW3yg"
+                            alt="Course" class="w-full h-40 object-cover">
+                        <div class="p-5">
+                            <div class="flex justify-between items-center mb-2">
+                                <span
+                                    class="bg-primary-light text-primary text-xs px-2 py-1 rounded-full">Business</span>
+                                <span class="text-sm text-gray-500">1.5 Hours</span>
+                            </div>
+                            <h3 class="text-lg font-bold mb-2">Digital Marketing Basics</h3>
+                            <p class="text-gray-600 mb-4 dark:text-gray-300">Learn the fundamentals of digital marketing
+                                strategies and
+                                channels.</p>
+                            <div class="flex justify-between items-center">
+                                <div class="flex items-center">
+                                    <span
+                                        class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full">Beginner</span>
+                                </div>
+                                <a href="{{ url_for('course_detail') }}"
+                                    class="text-primary hover:text-primary-dark font-medium">Start Learning
+                                    →</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Course 11 -->
+                    <div class="course-card bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition duration-300"
+                        data-category="business" data-level="intermediate" data-duration="medium">
+                        <img src="https://i.ytimg.com/vi/uWPIsaYpY7U/hq720.jpg?sqp=-…AFwAcABBg==&rs=AOn4CLBfjGrJHcN5Od_5kjbWKoRHYbRvfQ"
+                            alt="Course" class="w-full h-40 object-cover">
+                        <div class="p-5">
+                            <div class="flex justify-between items-center mb-2">
+                                <span
+                                    class="bg-primary-light text-primary text-xs px-2 py-1 rounded-full">Business</span>
+                                <span class="text-sm text-gray-500">3 Hours</span>
+                            </div>
+                            <h3 class="text-lg font-bold mb-2">Project Management Essentials</h3>
+                            <p class="text-gray-600 mb-4 dark:text-gray-300">Learn to manage projects efficiently using
+                                agile
+                                methodologies.</p>
+                            <div class="flex justify-between items-center">
+                                <div class="flex items-center">
+                                    <span
+                                        class="bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded-full">Intermediate</span>
+                                </div>
+                                <a href="{{ url_for('course_detail') }}"
+                                    class="text-primary hover:text-primary-dark font-medium">Start Learning
+                                    →</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Course 12 -->
+                    <div class="course-card bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition duration-300"
+                        data-category="business" data-level="advanced" data-duration="long">
+                        <img src="https://i.ytimg.com/vi/6lY9CYIY4pQ/hq720.jpg?sqp=-…AFwAcABBg==&rs=AOn4CLDhIUFPAzGZmfucCGnxrmZ1N8Guuw"
+                            alt="Course" class="w-full h-40 object-cover">
+                        <div class="p-5">
+                            <div class="flex justify-between items-center mb-2">
+                                <span
+                                    class="bg-primary-light text-primary text-xs px-2 py-1 rounded-full">Business</span>
+                                <span class="text-sm text-gray-500">7 Hours</span>
+                            </div>
+                            <h3 class="text-lg font-bold mb-2">Startup Growth Strategies</h3>
+                            <p class="text-gray-600 mb-4 dark:text-gray-300">Advanced strategies for scaling startups
+                                and gaining
+                                market share.</p>
+                            <div class="flex justify-between items-center">
+                                <div class="flex items-center">
+                                    <span class="bg-red-100 text-red-800 text-xs px-2 py-1 rounded-full">Advanced</span>
+                                </div>
+                                <a href="{{ url_for('course_detail') }}"
+                                    class="text-primary hover:text-primary-dark font-medium">Start Learning
+                                    →</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- No Results Message -->
+                <div id="no-results" class="hidden text-center py-12">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-gray-400 mx-auto mb-4" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <h3 class="text-xl font-bold mb-2">No courses found</h3>
+                    <p class="text-gray-600">Try adjusting your filters or search criteria</p>
+                    <button id="clear-filters"
+                        class="mt-4 bg-primary text-white px-6 py-2 rounded-lg hover:bg-primary-dark transition duration-300">
+                        Clear Filters
                     </button>
                 </div>
 
-                <!-- Course Grid -->
-                <div class="lg:w-3/4">
-                    <div class="flex justify-between items-center mb-6">
-                        <h2 class="text-2xl font-bold">Available Courses (<span id="course-count">12</span>)</h2>
-                        <select id="sort-by"
-                            class="bg-white dark:bg-gray-800 border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary">
-                            <option value="popular">Most Popular</option>
-                            <option value="newest">Newest</option>
-                            <option value="az">A-Z</option>
-                            <option value="za">Z-A</option>
-                        </select>
-                    </div>
-                    
-                    <!-- Courses Section -->
-                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        <!-- Course 1 -->
-                        <div class="course-card bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm hover:shadow-md"
-                            data-category="web-dev" data-level="beginner" data-duration="medium">
-                            <img src="https://i.ytimg.com/vi/zJSY8tbf_ys/hq720.jpg?sqp=-oaymwEnCNAFEJQDSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLC7nYCbagVW04a3ejzgIGymHk0ruQ"
-                                alt="Course" class="w-full h-40 object-cover">
-                            <div class="p-5">
-                                <div class="flex justify-between items-center mb-2">
-                                    <span class="bg-primary-light text-primary text-xs px-2 py-1 rounded-full">Web
-                                        Development</span>
-                                    <span class="text-sm text-gray-500">4.2 Hours</span>
-                                </div>
-                                <h3 class="text-lg font-bold mb-2">HTML & CSS Fundamentals</h3>
-                                <p class="text-gray-600 mb-4 dark:text-gray-300">Learn the basics of HTML and CSS to create responsive
-                                    websites from scratch.</p>
-                                <div class="flex justify-between items-center">
-                                    <div class="flex items-center">
-                                        <span
-                                            class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full">Beginner</span>
-                                    </div>
-                                    <a href="{{ url_for('course_detail') }}"
-                                        class="text-primary hover:text-primary-dark font-medium">Start Learning
-                                        →</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Course 2 -->
-                        <div class="course-card bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition duration-300"
-                            data-category="web-dev" data-level="intermediate" data-duration="medium">
-                            <img src="https://i.ytimg.com/vi/876aSEUA_8c/hq720.jpg?sqp=-…BACGAY4AUAB&rs=AOn4CLAeLQy9bV1mLiLBZHy0yhQ23KASCA"
-                                alt="Course" class="w-full h-40 object-cover">
-                            <div class="p-5">
-                                <div class="flex justify-between items-center mb-2">
-                                    <span class="bg-primary-light text-primary text-xs px-2 py-1 rounded-full">Web
-                                        Development</span>
-                                    <span class="text-sm text-gray-500">5 Hours</span>
-                                </div>
-                                <h3 class="text-lg font-bold mb-2">JavaScript Essentials</h3>
-                                <p class="text-gray-600 mb-4 dark:text-gray-300">Master the fundamentals of JavaScript programming and DOM
-                                    manipulation.</p>
-                                <div class="flex justify-between items-center">
-                                    <div class="flex items-center">
-                                        <span
-                                            class="bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded-full">Intermediate</span>
-                                    </div>
-                                    <a href="{{ url_for('course_detail') }}"
-                                        class="text-primary hover:text-primary-dark font-medium">Start Learning
-                                        →</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Course 3 -->
-                        <div class="course-card bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition duration-300"
-                            data-category="web-dev" data-level="advanced" data-duration="long">
-                            <img src="	https://i.ytimg.com/vi/EwzWg-Joxq0/hq720.jpg?sqp=-…AFwAcABBg==&rs=AOn4CLAF6Q8N-dWbO1UAtXlZkSo9oGQemw"
-                                alt="Course" class="w-full h-40 object-cover">
-                            <div class="p-5">
-                                <div class="flex justify-between items-center mb-2">
-                                    <span class="bg-primary-light text-primary text-xs px-2 py-1 rounded-full">Web
-                                        Development</span>
-                                    <span class="text-sm text-gray-500">8 Hours</span>
-                                </div>
-                                <h3 class="text-lg font-bold mb-2">Modern React Development</h3>
-                                <p class="text-gray-600 mb-4 dark:text-gray-300">Build powerful web applications with React, Hooks, and
-                                    Context API.</p>
-                                <div class="flex justify-between items-center">
-                                    <div class="flex items-center">
-                                        <span
-                                            class="bg-red-100 text-red-800 text-xs px-2 py-1 rounded-full">Advanced</span>
-                                    </div>
-                                    <a href="{{ url_for('course_detail') }}"
-                                        class="text-primary hover:text-primary-dark font-medium">Start Learning
-                                        →</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Course 4 -->
-                        <div class="course-card bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition duration-300"
-                            data-category="data-science" data-level="beginner" data-duration="medium">
-                            <img src="https://i.ytimg.com/vi/r-uOLxNrNk8/hq720.jpg?sqp=-…AFwAcABBg==&rs=AOn4CLCLUeg_531pApSar51eX72QVFqYLg"
-                                alt="Course" class="w-full h-40 object-cover">
-                            <div class="p-5">
-                                <div class="flex justify-between items-center mb-2">
-                                    <span class="bg-primary-light text-primary text-xs px-2 py-1 rounded-full">Data
-                                        Science</span>
-                                    <span class="text-sm text-gray-500">3.5 Hours</span>
-                                </div>
-                                <h3 class="text-lg font-bold mb-2">Python for Data Analysis</h3>
-                                <p class="text-gray-600 mb-4 dark:text-gray-300">Learn how to use Python for data analysis, visualization,
-                                    and insights.</p>
-                                <div class="flex justify-between items-center">
-                                    <div class="flex items-center">
-                                        <span
-                                            class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full">Beginner</span>
-                                    </div>
-                                    <a href="{{ url_for('course_detail') }}"
-                                        class="text-primary hover:text-primary-dark font-medium">Start Learning
-                                        →</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Course 5 -->
-                        <div class="course-card bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition duration-300"
-                            data-category="data-science" data-level="intermediate" data-duration="long">
-                            <img src="https://i.ytimg.com/vi/i_LwzRVP7bg/hq720.jpg?sqp=-…AFwAcABBg==&rs=AOn4CLBP2UV9ostI2w6OAfjVSUqiIHi3YQ"
-                                alt="Course" class="w-full h-40 object-cover">
-                            <div class="p-5">
-                                <div class="flex justify-between items-center mb-2">
-                                    <span class="bg-primary-light text-primary text-xs px-2 py-1 rounded-full">Data
-                                        Science</span>
-                                    <span class="text-sm text-gray-500">6.5 Hours</span>
-                                </div>
-                                <h3 class="text-lg font-bold mb-2">Machine Learning Fundamentals</h3>
-                                <p class="text-gray-600 mb-4 dark:text-gray-300">Understand the core concepts of ML algorithms and
-                                    implementation.</p>
-                                <div class="flex justify-between items-center">
-                                    <div class="flex items-center">
-                                        <span
-                                            class="bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded-full">Intermediate</span>
-                                    </div>
-                                    <a href="{{ url_for('course_detail') }}"
-                                        class="text-primary hover:text-primary-dark font-medium">Start Learning
-                                        →</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Course 6 -->
-                        <div class="course-card bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition duration-300"
-                            data-category="mobile-dev" data-level="intermediate" data-duration="medium">
-                            <img src="https://i.ytimg.com/vi/KCgYDCKqato/hq720.jpg?sqp=-…AFwAcABBg==&rs=AOn4CLBf8hNqBP3krZtrT4SpwER8mxvDTA"
-                                alt="Course" class="w-full h-40 object-cover">
-                            <div class="p-5">
-                                <div class="flex justify-between items-center mb-2">
-                                    <span class="bg-primary-light text-primary text-xs px-2 py-1 rounded-full">Mobile
-                                        Development</span>
-                                    <span class="text-sm text-gray-500">5 Hours</span>
-                                </div>
-                                <h3 class="text-lg font-bold mb-2">Building iOS Apps with Swift</h3>
-                                <p class="text-gray-6ail.html00 mb-4 dark:text-gray-300">Create your first iOS application using Swift and
-                                    SwiftUI
-                                    framework.</p>
-                                <div class="flex justify-between items-center">
-                                    <div class="flex items-center">
-                                        <span
-                                            class="bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded-full">Intermediate</span>
-                                    </div>
-                                    <a href="{{ url_for('course_detail') }}"
-                                        class="text-primary hover:text-primary-dark font-medium">Start Learning
-                                        →</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Course 7 -->
-                        <div class="course-card bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition duration-300"
-                            data-category="mobile-dev" data-level="beginner" data-duration="short">
-                            <img src="https://i.ytimg.com/vi/BxM2DayeOBE/hq720.jpg?sqp=-…AFwAcABBg==&rs=AOn4CLCtfslCq4rH6Z3Ugrlow2akMYcJ5Q"
-                                alt="Course" class="w-full h-40 object-cover">
-                            <div class="p-5">
-                                <div class="flex justify-between items-center mb-2">
-                                    <span class="bg-primary-light text-primary text-xs px-2 py-1 rounded-full">Mobile
-                                        Development</span>
-                                    <span class="text-sm text-gray-500">1.5 Hours</span>
-                                </div>
-                                <h3 class="text-lg font-bold mb-2">Intro to Android Development</h3>
-                                <p class="text-gray-600 mb-4 dark:text-gray-300">Learn the basics of Android app development with Kotlin.
-                                </p>
-                                <div class="flex justify-between items-center">
-                                    <div class="flex items-center">
-                                        <span
-                                            class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full">Beginner</span>
-                                    </div>
-                                    <a href="{{ url_for('course_detail') }}"
-                                        class="text-primary hover:text-primary-dark font-medium">Start Learning
-                                        →</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Course 8 -->
-                        <div class="course-card bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition duration-300"
-                            data-category="ui-ux" data-level="beginner" data-duration="short">
-                            <img src="https://i.ytimg.com/vi/WylVZzSsavg/hq720.jpg?sqp=-…AFwAcABBg==&rs=AOn4CLCCBwwYGK48wbKEfT63KXfAbO0urA"
-                                alt="Course" class="w-full h-40 object-cover">
-                            <div class="p-5">
-                                <div class="flex justify-between items-center mb-2">
-                                    <span class="bg-primary-light text-primary text-xs px-2 py-1 rounded-full">UI/UX
-                                        Design</span>
-                                    <span class="text-sm text-gray-500">1.8 Hours</span>
-                                </div>
-                                <h3 class="text-lg font-bold mb-2">UI Design Principles</h3>
-                                <p class="text-gray-600 mb-4 dark:text-gray-300">Learn the fundamental principles of effective user
-                                    interface design.</p>
-                                <div class="flex justify-between items-center">
-                                    <div class="flex items-center">
-                                        <span
-                                            class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full">Beginner</span>
-                                    </div>
-                                    <a href="{{ url_for('course_detail') }}"
-                                        class="text-primary hover:text-primary-dark font-medium">Start Learning
-                                        →</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Course 9 -->
-                        <div class="course-card bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition duration-300"
-                            data-category="ui-ux" data-level="intermediate" data-duration="medium">
-                            <img src="https://i.ytimg.com/vi/R7urbI0iqb0/hq720.jpg?sqp=-…AFwAcABBg==&rs=AOn4CLC1GvcXOTqavzjsv-wslL4WXucUNw"
-                                alt="Course" class="w-full h-40 object-cover">
-                            <div class="p-5">
-                                <div class="flex justify-between items-center mb-2">
-                                    <span class="bg-primary-light text-primary text-xs px-2 py-1 rounded-full">UI/UX
-                                        Design</span>
-                                    <span class="text-sm text-gray-500">4 Hours</span>
-                                </div>
-                                <h3 class="text-lg font-bold mb-2">User Experience Research</h3>
-                                <p class="text-gray-600 mb-4 dark:text-gray-300">Master UX research methods to create user-centered
-                                    designs.</p>
-                                <div class="flex justify-between items-center">
-                                    <div class="flex items-center">
-                                        <span
-                                            class="bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded-full">Intermediate</span>
-                                    </div>
-                                    <a href="{{ url_for('course_detail') }}"
-                                        class="text-primary hover:text-primary-dark font-medium">Start Learning
-                                        →</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Course 10 -->
-                        <div class="course-card bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition duration-300"
-                            data-category="business" data-level="beginner" data-duration="short">
-                            <img src="https://i.ytimg.com/vi/kunkYTKFNtI/hq720.jpg?sqp=-…AFwAcABBg==&rs=AOn4CLBtpJPvFZUN2ghJMhRNShMmPXW3yg"
-                                alt="Course" class="w-full h-40 object-cover">
-                            <div class="p-5">
-                                <div class="flex justify-between items-center mb-2">
-                                    <span
-                                        class="bg-primary-light text-primary text-xs px-2 py-1 rounded-full">Business</span>
-                                    <span class="text-sm text-gray-500">1.5 Hours</span>
-                                </div>
-                                <h3 class="text-lg font-bold mb-2">Digital Marketing Basics</h3>
-                                <p class="text-gray-600 mb-4 dark:text-gray-300">Learn the fundamentals of digital marketing strategies and
-                                    channels.</p>
-                                <div class="flex justify-between items-center">
-                                    <div class="flex items-center">
-                                        <span
-                                            class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full">Beginner</span>
-                                    </div>
-                                    <a href="{{ url_for('course_detail') }}"
-                                        class="text-primary hover:text-primary-dark font-medium">Start Learning
-                                        →</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Course 11 -->
-                        <div class="course-card bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition duration-300"
-                            data-category="business" data-level="intermediate" data-duration="medium">
-                            <img src="https://i.ytimg.com/vi/uWPIsaYpY7U/hq720.jpg?sqp=-…AFwAcABBg==&rs=AOn4CLBfjGrJHcN5Od_5kjbWKoRHYbRvfQ"
-                                alt="Course" class="w-full h-40 object-cover">
-                            <div class="p-5">
-                                <div class="flex justify-between items-center mb-2">
-                                    <span
-                                        class="bg-primary-light text-primary text-xs px-2 py-1 rounded-full">Business</span>
-                                    <span class="text-sm text-gray-500">3 Hours</span>
-                                </div>
-                                <h3 class="text-lg font-bold mb-2">Project Management Essentials</h3>
-                                <p class="text-gray-600 mb-4 dark:text-gray-300">Learn to manage projects efficiently using agile
-                                    methodologies.</p>
-                                <div class="flex justify-between items-center">
-                                    <div class="flex items-center">
-                                        <span
-                                            class="bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded-full">Intermediate</span>
-                                    </div>
-                                    <a href="{{ url_for('course_detail') }}"
-                                        class="text-primary hover:text-primary-dark font-medium">Start Learning
-                                        →</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Course 12 -->
-                        <div class="course-card bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition duration-300"
-                            data-category="business" data-level="advanced" data-duration="long">
-                            <img src="https://i.ytimg.com/vi/6lY9CYIY4pQ/hq720.jpg?sqp=-…AFwAcABBg==&rs=AOn4CLDhIUFPAzGZmfucCGnxrmZ1N8Guuw"
-                                alt="Course" class="w-full h-40 object-cover">
-                            <div class="p-5">
-                                <div class="flex justify-between items-center mb-2">
-                                    <span
-                                        class="bg-primary-light text-primary text-xs px-2 py-1 rounded-full">Business</span>
-                                    <span class="text-sm text-gray-500">7 Hours</span>
-                                </div>
-                                <h3 class="text-lg font-bold mb-2">Startup Growth Strategies</h3>
-                                <p class="text-gray-600 mb-4 dark:text-gray-300">Advanced strategies for scaling startups and gaining
-                                    market share.</p>
-                                <div class="flex justify-between items-center">
-                                    <div class="flex items-center">
-                                        <span
-                                            class="bg-red-100 text-red-800 text-xs px-2 py-1 rounded-full">Advanced</span>
-                                    </div>
-                                    <a href="{{ url_for('course_detail') }}"
-                                        class="text-primary hover:text-primary-dark font-medium">Start Learning
-                                        →</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- No Results Message -->
-                    <div id="no-results" class="hidden text-center py-12">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-gray-400 mx-auto mb-4" fill="none"
-                            viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
-                        <h3 class="text-xl font-bold mb-2">No courses found</h3>
-                        <p class="text-gray-600">Try adjusting your filters or search criteria</p>
-                        <button id="clear-filters"
-                            class="mt-4 bg-primary text-white px-6 py-2 rounded-lg hover:bg-primary-dark transition duration-300">
-                            Clear Filters
-                        </button>
-                    </div>
-
-                    <!-- Load More Button -->
-                    <div class="text-center mt-10">
-                        <button id="load-more"
-                            class="bg-white dark:bg-gray-800 border border-primary text-primary dark:text-white px-8 py-3 rounded-lg hover:bg-gray-200 dark:hover:bg-primary transition duration-300">
-                            Load More Courses
-                        </button>
-                    </div>
+                <!-- Load More Button -->
+                <div class="text-center mt-10">
+                    <button id="load-more"
+                        class="bg-white dark:bg-gray-800 border border-primary text-primary dark:text-white px-8 py-3 rounded-lg hover:bg-gray-200 dark:hover:bg-primary transition duration-300">
+                        Load More Courses
+                    </button>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Footer -->
-    {% include 'footer.html' %}
+{% block courses %}<script src="/static/js/courses.js"></script>{% endblock %}
 
-    <!-- Javascript -->
-    <script src="/static/js/main.js"></script>
-    <script src="/static/js/courses.js"></script>
-
-</body>
-
-</html>
+{% endblock %}
