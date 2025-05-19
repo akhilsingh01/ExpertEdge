@@ -25,18 +25,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // const searchInput = document.querySelector('input[placeholder="Search courses..."]');
-    // if (searchInput) {
-    //     searchInput.addEventListener('keyup', function (e) {
-    //         if (e.key === 'Enter') {
-    //             const searchTerm = this.value.trim();
-    //             if (searchTerm) {
-    //                 window.location.href = `pages/courses.html?q=${encodeURIComponent(searchTerm)}`;
-    //             }
-    //         }
-    //     });
-    // }
-
     // Dark mode functionality
     const html = document.documentElement;
     // Select all toggles with a common class, e.g. "dark-mode-toggle"

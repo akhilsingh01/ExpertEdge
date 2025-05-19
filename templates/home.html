@@ -32,10 +32,14 @@
                         <a href="{{ url_for('courses') }}" class="bg-white btn-primary text-primary hover:bg-gray-200">
                             <span>Explore Courses</span>
                         </a>
+                        {% if not current_user %}
                         <a href="{{ url_for('sign_up') }}"
                             class="btn-primary py-3 px-6 border border-white hover:bg-white hover:text-primary">
                             <span>Get Started</span>
                         </a>
+                        {% else %}
+                        <div></div>
+                        {% endif %}
                     </div>
                 </div>
                 <div class="hidden md:block ml-10">
@@ -266,6 +270,7 @@
         </div>
     </div>
 
+    {% if not current_user %}
     <!-- CTA Section -->
     <div class="py-16 bg-gradient-to-r from-primary to-secondary text-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -280,6 +285,9 @@
             </a>
         </div>
     </div>
+    {% else %}
+    <div></div>
+    {% endif %}
 
     <!-- Footer -->
     {% include 'footer.html' %}
